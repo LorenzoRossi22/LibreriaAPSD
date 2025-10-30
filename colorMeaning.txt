@@ -1,0 +1,2 @@
+verde -> metodo default delle interfacce
+blu -> override
