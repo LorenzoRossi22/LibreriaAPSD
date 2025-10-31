@@ -4,9 +4,16 @@ import apsd.interfaces.containers.base.TraversableContainer;
 public interface InsertableContainer<Data> extends Container{ // Must extend Container
 
   boolean Insert(Data data); // Insert a single data item.
-  // Insert multiple data items.
+  // Insert multiple data items. true->success, false -> fail
   default boolean InsertAll(TraversableContainer<Data> TravCont){ 
-    return true;
+    boolean inserted = false;
+    if (TravCont == null) {
+      return inserted;
+    }
+    inserted = TravCont.TraverseForward(dat -> {
+      return !Insert(dat);
+    });
+    return !inserted;
   }
 
   // InsertSome
