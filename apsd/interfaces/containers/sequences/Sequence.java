@@ -1,19 +1,36 @@
 package apsd.interfaces.containers.sequences;
 
-// import apsd.classes.utilities.Box;
-// import apsd.classes.utilities.Natural;
-// import apsd.interfaces.containers.base.IterableContainer;
-// import apsd.interfaces.containers.iterators.ForwardIterator;
+import apsd.classes.utilities.Box;
+import apsd.classes.utilities.Natural;
+import apsd.interfaces.containers.base.IterableContainer;
+import apsd.interfaces.containers.iterators.ForwardIterator;
 
 /** Interface: IterableContainer con supporto alla lettura e ricerca tramite posizione. */
-public interface Sequence<Data> { // Must extend IterableContainer
+public interface Sequence<Data> extends IterableContainer<Data>{ // Must extend IterableContainer
 
-  // GetAt
+  Data GetAt(Natural pos);
 
-  // GetFirst
-  // GetLast
+  default Data GetFirst(){
+    return GetAt(Natural.ZERO);
+  }
+  default Data GetLast(){
+    if(IsEmpty()){
+      return GetAt(Natural.ZERO);
+    }
+    else
+    {
+      return GetAt(Size().Decrement());
+    }
+  }
 
-  // Search
+  default Natural Search(Data dat){
+    final Box<Long> index = new Box<>(-1L);
+    if(TraverseForward(element -> {
+      index.Set(index.Get() + 1);
+      return (element == null && dat == null || element != null && dat != null && element.equals(dat));
+    })){ return Natural.Of(index.Get())}
+    return null;
+  }
 
   // IsInBound
 
