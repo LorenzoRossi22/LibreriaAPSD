@@ -45,5 +45,19 @@ public interface TraversableContainer<Data> extends MembershipContainer<Data>{ /
   /* ************************************************************************ */
 
   @Override
-  default boolean Exists(Data dat){}
+  default boolean Exists(Data value){
+    if (value==null) {
+      return false;
+    }
+    return TraverseForward(dat -> {
+
+      if(value.equals(dat)){
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    });
+  }
 }
