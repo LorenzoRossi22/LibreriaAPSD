@@ -23,14 +23,14 @@ public class WStack<Data> implements Stack<Data>{ // Must implement Stack
   public WStack(TraversableContainer<Data> con){
     lst = new VList<>();
     for(long i = 0; i < con.Size().ToLong(); i++){
-      lst.InsertAt(Natural.Of(i), con.GetAt(Natural.Of(i)));
+      lst.InsertAt(con.GetAt(Natural.Of(i)), Natural.Of(i));
     }
   }
 
   public WStack(List<Data> lst, TraversableContainer<Data> con){
     this.lst = lst;
     for(long i = 0; i < con.Size().ToLong(); i++){
-      lst.InsertAt(Natural.Of(i), con.GetAt(Natural.Of(i)));
+      lst.InsertAt(con.GetAt(Natural.Of(i)), Natural.Of(i));
     }
   }
 
@@ -131,7 +131,7 @@ public class WStack<Data> implements Stack<Data>{ // Must implement Stack
   }
 
   public void Push(Data dat){
-    lst.InsertAt(lst.Size(), dat);
+    lst.InsertAt(dat, lst.Size());
   }
 
 }

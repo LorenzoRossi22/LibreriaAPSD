@@ -22,7 +22,7 @@ public interface List<Data> extends Chain<Data>, MutableSequence<Data>, Insertab
 
     for (long i = start; i <= end; i++) {
         Data v = GetAt(Natural.Of(i));
-        sub.InsertAt(sub.Size(), v);
+        sub.InsertAt(v, sub.Size());
     }
 
     return sub;
@@ -34,7 +34,7 @@ public interface List<Data> extends Chain<Data>, MutableSequence<Data>, Insertab
 
   default boolean Insert(Data dat){
     if (dat == null) return false;
-    InsertAt(Size(), dat);
+    InsertAt(dat, Size());
     return true;
   }
 

@@ -3,7 +3,7 @@ package apsd.interfaces.containers.collections;
 import apsd.interfaces.containers.sequences.SortedSequence;
 import apsd.classes.utilities.Natural;
 
-public interface SortedChain<Data extends Comparable<Data>> extends OrderedChain<Data>, SortedSequence<Data>{ // Must extend OrderedChain and SortedSequence
+public interface SortedChain<Data extends Comparable<? super Data>> extends SortedSequence<Data>, Chain<Data>{ // Must extend OrderedChain and SortedSequence
 
   default Natural SearchPredecessor(Data dat){
     if (dat == null || Size().ToLong() == 0)  return null;
@@ -15,7 +15,7 @@ public interface SortedChain<Data extends Comparable<Data>> extends OrderedChain
     while (left <= right) {
         long mid = (left + right) / 2;
         Data midVal = GetAt(Natural.Of(mid));
-        int cmp = ((Comparable<Data>) midVal).compareTo(dat);
+        int cmp = ((Comparable<? super Data>) midVal).compareTo(dat);
 
         if (cmp < 0) {
             result = mid;
@@ -42,7 +42,7 @@ public interface SortedChain<Data extends Comparable<Data>> extends OrderedChain
     while (left <= right) {
         long mid = (left + right) / 2;
         Data midVal = GetAt(Natural.Of(mid));
-        int cmp = ((Comparable<Data>) midVal).compareTo(dat);
+        int cmp = ((Comparable<? super Data>) midVal).compareTo(dat);
 
         if (cmp > 0) {
             result = mid;
@@ -72,7 +72,7 @@ public interface SortedChain<Data extends Comparable<Data>> extends OrderedChain
     while (left <= right) {
         long mid = (left + right) / 2;
         Data midVal = GetAt(Natural.Of(mid));
-        int cmp = ((Comparable<Data>) midVal).compareTo(dat);
+        int cmp = ((Comparable<? super Data>) midVal).compareTo(dat);
 
         if (cmp == 0) {
             return Natural.Of(mid);

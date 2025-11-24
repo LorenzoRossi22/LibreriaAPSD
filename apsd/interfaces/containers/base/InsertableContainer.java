@@ -14,16 +14,17 @@ public interface InsertableContainer<Data> extends TraversableContainer<Data>{ /
     return !cont;
   }
 
-  default boolean InsertSome(TraversableContainer<Data> TravC) {
-
-    boolean cont = TravC.TraverseForward(elem -> {
+default boolean InsertSome(TraversableContainer<Data> TravC) {
+    boolean[] changed = {false};
+    
+    TravC.TraverseForward(elem -> {
         if (Insert(elem)) {
-            return true;   
+            changed[0] = true;
         }
-        return false;      
+        return false; 
     });
 
-    return cont;
-  }
+    return changed[0];
+}
 
 }

@@ -79,7 +79,7 @@ public class Vector<Data> extends LinearVectorBase<Data>{ // Must extend LinearV
     return result;
   }
 
-  public void InsertAt(Natural nat, Data dat) {
+  public void InsertAt(Data dat, Natural nat) {
     long idx = nat.ToLong();
     if (idx < 0 || idx > Size().ToLong()) throw new IndexOutOfBoundsException();
     ShiftRight(Natural.Of(idx), Natural.Of(1));

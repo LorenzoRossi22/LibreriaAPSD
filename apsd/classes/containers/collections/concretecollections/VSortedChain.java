@@ -8,7 +8,7 @@ import apsd.interfaces.containers.collections.SortedChain;
 import apsd.classes.containers.sequences.DynVector;
 
 /** Object: Concrete set implementation via (dynamic circular) vector. */
-public class VSortedChain<Data extends Comparable<Data>> extends VChainBase<Data> implements SortedChain<Data>{ // Must extend VChainBase and implements SortedChain
+public class VSortedChain<Data extends Comparable<? super Data>> extends VChainBase<Data> implements SortedChain<Data>{ // Must extend VChainBase and implements SortedChain
 
   public VSortedChain(){
     super(new DynVector<>());
@@ -70,7 +70,7 @@ public class VSortedChain<Data extends Comparable<Data>> extends VChainBase<Data
         pos++;
     }
 
-    vec.InsertAt(Natural.Of(pos), dat);
+    vec.InsertAt(dat, Natural.Of(pos));
     return true;
   }
 
@@ -90,7 +90,7 @@ public class VSortedChain<Data extends Comparable<Data>> extends VChainBase<Data
         pos++;
     }
 
-    vec.InsertAt(Natural.Of(pos), dat);
+    vec.InsertAt(dat, Natural.Of(pos));
     return true;
   }
 
