@@ -1,15 +1,34 @@
 package apsd.interfaces.containers.iterators;
 
-// import apsd.classes.utilities.Natural;
-// import apsd.interfaces.traits.Predicate;
+import apsd.classes.utilities.Natural;
+import apsd.interfaces.traits.Predicate;
 
 /** Interface: Iteratore all'indietro. */
-public interface BackwardIterator<Data> { // Must extend Iterator
+public interface BackwardIterator<Data> extends Iterator<Data>{ // Must extend Iterator
 
-  // Prev
+  default void Prev(){
+    if (IsValid()) {
+        DataNPrev();
+    }
+  }
 
-  // DataNPrev
+  default void Prev(Natural nat){
+    if (nat == null) return;
 
-  // ForEachBackward
+    long steps = nat.ToLong();
+    for (long i = 0; i < steps && IsValid(); i = i + 1) {
+        DataNPrev();
+    }
+  }
 
+  Data DataNPrev();
+
+  default boolean ForEachBackward(Predicate<Data> fun) {
+    if (fun != null) {
+      while (IsValid()) {
+        if (fun.Apply(DataNPrev())) { return true; }
+      }
+    }
+    return false;
+  }
 }

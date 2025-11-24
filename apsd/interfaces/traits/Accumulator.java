@@ -1,6 +1,6 @@
 package apsd.interfaces.traits;
 
-/** Trait: E' una funziona accumulatrice. */
+/** Trait: E' una funzione accumulatrice. */
 @FunctionalInterface
 public interface Accumulator<Data, Acc> {
 

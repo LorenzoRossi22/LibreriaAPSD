@@ -1,12 +1,29 @@
 package apsd.interfaces.containers.base;
 
 /** Interface: Container con supporto alla rimozione di un dato. */
-public interface RemovableContainer<Data> { // Must extend Container
+public interface RemovableContainer<Data> extends Container{ // Must extend Container
 
-  // Remove
+  boolean Remove(Data dat);
 
-  // RemoveAll
+  default boolean RemoveAll(TraversableContainer<Data> TravC){
+    
+    boolean cont = TravC.TraverseForward(elem -> {
+        return !Remove(elem);   
+    });
 
-  // RemoveSome
+    return !cont;
+  }
+
+  default boolean RemoveSome(TraversableContainer<Data> TravC){
+    
+    boolean cont = TravC.TraverseForward(elem -> {
+        if (Remove(elem)) {
+            return true;   
+        }
+        return false;      
+    });
+
+    return cont;
+  }
 
 }

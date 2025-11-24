@@ -1,47 +1,103 @@
 package apsd.interfaces.containers.sequences;
 
-// import apsd.classes.utilities.Natural;
-// import apsd.interfaces.containers.base.ReallocableContainer;
+import apsd.classes.utilities.Natural;
+import apsd.interfaces.containers.base.ReallocableContainer;
 
-public interface Vector<Data> { // Must extend ReallocableContainer and MutableSequence
+public interface Vector<Data> extends ReallocableContainer,MutableSequence<Data>,InsertableAtSequence<Data>{ // Must extend ReallocableContainer and MutableSequence
 
-  // ShiftLeft
+  Vector<Data> New();
 
-  // default void ShiftLeft(Natural pos, Natural num) {
-  //   long idx = ExcIfOutOfBound(pos);
-  //   long size = Size().ToLong();
-  //   long len = num.ToLong();
-  //   len = (len <= size - idx) ? len : size - idx;
-  //   if (len > 0) {
-  //     long iniwrt = idx;
-  //     long wrt = iniwrt;
-  //     for (long rdr = wrt + len; rdr < size; rdr++, wrt++) {
-  //       Natural natrdr = Natural.Of(rdr);
-  //       SetAt(GetAt(natrdr), Natural.Of(wrt));
-  //       SetAt(null, natrdr);
-  //     }
-  //     for (; wrt - iniwrt < len; wrt++) {
-  //       SetAt(null, Natural.Of(wrt));
-  //     }
-  //   }
-  // }
+  default void ShiftLeft(Natural nat){
+    ShiftLeft(nat, new Natural(1));
+  }
 
-  // ShiftFirstLeft
+  default void ShiftLeft(Natural pos, Natural num) {
+    long idx = ExcIfOutOfBound(pos);
+    long size = Size().ToLong();
+    long len = num.ToLong();
+    len = (len <= size - idx) ? len : size - idx;
+    if (len > 0) {
+      long iniwrt = idx;
+      long wrt = iniwrt;
+      for (long rdr = wrt + len; rdr < size; rdr++, wrt++) {
+        Natural natrdr = Natural.Of(rdr);
+        SetAt(GetAt(natrdr), Natural.Of(wrt));
+        SetAt(null, natrdr);
+      }
+      for (; wrt - iniwrt < len; wrt++) {
+        SetAt(null, Natural.Of(wrt));
+      }
+    }
+  }
 
-  // ShiftLastLeft
+  default void ShiftFirstLeft(){
+    if (Size().ToLong() == 0) return;
+    ShiftLeft(new Natural(0), new Natural(1));
+  }
 
-  // ShiftRight
+  default void ShiftLastLeft(){
+    long size = Size().ToLong();
+    if (size == 0) return;
+    SetAt(null, Natural.Of(size - 1));
+  }
 
-  // ShiftFirstRight
+  default void ShiftRight(Natural nat){
+    ShiftRight(nat, new Natural(1));
+  }
 
-  // ShiftLastRight
+  default void ShiftRight(Natural pos, Natural num) {
+    long idx = ExcIfOutOfBound(pos);
+    long size = Size().ToLong();
+    long len = num.ToLong();
+    len = (len <= size - idx) ? len : size - idx;
+    if (len > 0) {
+      long iniwrt = size - 1;
+      long wrt = iniwrt + len;
+      while (wrt >= Capacity().ToLong()) Grow();
+      for (long rdr = iniwrt; rdr >= idx; rdr--, wrt--) {
+          Natural natrdr = Natural.Of(rdr);
+          SetAt(GetAt(natrdr), Natural.Of(wrt));
+          SetAt(null, natrdr);
+      }
+    }
+  }
+  
 
-  // SubVector
+  default void ShiftFirstRight(){
+    if (Size().ToLong() == 0) return;
+    ShiftRight(new Natural(0));
+  }
+
+  default void ShiftLastRight(){
+    long size = Size().ToLong();
+    ShiftRight(Natural.Of(size - 1), new Natural(1));
+  }
+
+  default Vector<Data> SubVector(Natural nat1, Natural nat2){
+    long start = ExcIfOutOfBound(nat1);
+    long end   = ExcIfOutOfBound(nat2);
+
+    if (start > end) {
+        long t = start;
+        start = end;
+        end = t;
+    }
+
+    Vector<Data> sub = New();
+
+    for (long i = start; i <= end; i++) {
+        sub.InsertLast(GetAt(Natural.Of(i)));
+    }
+
+    return sub;
+  }
 
   /* ************************************************************************ */
   /* Override specific member functions from Container                        */
   /* ************************************************************************ */
 
-  // ...
+  default Natural Size(){
+    return MutableSequence.super.Size();
+  }
 
 }
