@@ -21,6 +21,9 @@ public interface ForwardIterator<Data> extends Iterator<Data>{ // Must extend It
     }
   }
 
+  default void Next(long steps) {
+    Next(Natural.Of(steps));
+  }
   Data DataNNext();
 
   default boolean ForEachForward(Predicate<Data> fun) {
