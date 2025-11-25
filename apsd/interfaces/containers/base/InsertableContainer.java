@@ -1,7 +1,8 @@
 package apsd.interfaces.containers.base;
 
+
 /** Interface: Container con supporto all'inserimento di un dato. */
-public interface InsertableContainer<Data> extends TraversableContainer<Data>{ // Must extend Container
+public interface InsertableContainer<Data> extends Container{ // Must extend Container
 
   boolean Insert(Data dat);
                                 
@@ -14,7 +15,8 @@ public interface InsertableContainer<Data> extends TraversableContainer<Data>{ /
     return !cont;
   }
 
-default boolean InsertSome(TraversableContainer<Data> TravC) {
+  default boolean InsertSome(TraversableContainer<Data> TravC) {
+    if(TravC == null) return false;
     boolean[] changed = {false};
     
     TravC.TraverseForward(elem -> {
@@ -25,6 +27,5 @@ default boolean InsertSome(TraversableContainer<Data> TravC) {
     });
 
     return changed[0];
-}
-
+  }
 }
