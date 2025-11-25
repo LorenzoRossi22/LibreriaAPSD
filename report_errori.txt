@@ -1,0 +1,1304 @@
+Run tests with: make runtest
+java -jar ./zapsdtest/zjunit/junit-platform-console-standalone-1.12.1.jar execute --scan-class-path --details tree \
+	--class-path .
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+**** VOrderedSetI **********************************
+Begin of all test units [VOrderedSetITest]
+1) Begin of a single test unit
+   - 1 Test Exists: Ok!
+   - 2 Test Filter: Ok!
+   - 3 Test Union: Ok!
+   - 4 Test Intersection: Ok!
+   - 5 Test Difference: Ok!
+   - 6 Test Size: Ok!
+   - 7 Test Min: Ok!
+   - 8 Test Max: Ok!
+1) End of a single test unit (Errors/Try/Tests: 0/8/8)
+2) Begin of a single test unit
+   - 1 Test Insert: 2) End of a single test unit (Errors/Try/Tests: 45/1/45)
+3) Begin of a single test unit
+   - 1 Test Size: Ok!
+   - 2 Test IsEmpty: Ok!
+   - 3 Test Size-IsEmpty Consistency: Ok!
+3) End of a single test unit (Errors/Try/Tests: 0/3/3)
+4) Begin of a single test unit
+   - 1 Test Insert: 4) End of a single test unit (Errors/Try/Tests: 13/1/13)
+End of all test units (Errors/Try/Tests: 58/13/69)
+****************************************************
+Total test units up to now (Errors/Try/Tests: 58/13/69)
+****************************************************
+15 - VOrderedSetI (err/try/tot): 58/13/69
+****************************************************
+
+**** VStackI ***************************************
+Begin of all test units [VStackITest]
+1) Begin of a single test unit
+   - 1 Test Top: Ok!
+   - 2 Test Pop: 1) End of a single test unit (Errors/Try/Tests: 2/2/3)
+2) Begin of a single test unit
+   - 1 Test Insert: 2) End of a single test unit (Errors/Try/Tests: 17/1/17)
+3) Begin of a single test unit
+   - 1 Test Size: Ok!
+   - 2 Test IsEmpty: Ok!
+   - 3 Test Size-IsEmpty Consistency: Ok!
+3) End of a single test unit (Errors/Try/Tests: 0/3/3)
+4) Begin of a single test unit
+   - 1 Test Insert: 4) End of a single test unit (Errors/Try/Tests: 9/1/9)
+End of all test units (Errors/Try/Tests: 28/7/32)
+****************************************************
+Total test units up to now (Errors/Try/Tests: 86/20/101)
+****************************************************
+09 - VStackI (err/try/tot): 28/7/32
+15 - VOrderedSetI (err/try/tot): 58/13/69
+****************************************************
+
+**** DynVectorI ************************************
+Begin of all test units [DynVectorITest]
+1) Begin of a single test unit
+   - 1 Test GetFirst: 1) End of a single test unit (Errors/Try/Tests: 9/1/9)
+2) Begin of a single test unit
+   - 1 Test SetFirst: Ok!
+   - 2 Test ExpandWithNumber: 2) End of a single test unit (Errors/Try/Tests: 40/2/41)
+3) Begin of a single test unit
+   - 1 Test Size: Ok!
+   - 2 Test IsEmpty: Ok!
+   - 3 Test Size-IsEmpty Consistency: Ok!
+3) End of a single test unit (Errors/Try/Tests: 0/3/3)
+4) Begin of a single test unit
+   - 1 Test SetFirst: Ok!
+   - 2 Test ExpandWithNumber: 4) End of a single test unit (Errors/Try/Tests: 15/2/16)
+End of all test units (Errors/Try/Tests: 64/8/69)
+****************************************************
+Total test units up to now (Errors/Try/Tests: 150/28/170)
+****************************************************
+03 - DynVectorI (err/try/tot): 64/8/69
+09 - VStackI (err/try/tot): 28/7/32
+15 - VOrderedSetI (err/try/tot): 58/13/69
+****************************************************
+
+**** LLQueueI **************************************
+Begin of all test units [LLQueueITest]
+1) Begin of a single test unit
+   - 1 Test Head: 1) End of a single test unit (Errors/Try/Tests: 3/1/3)
+2) Begin of a single test unit
+   - 1 Test Enqueue: Ok!
+   - 2 Test Insert: Ok!
+   - 3 Test Enqueue: Ok!
+   - 4 Test Insert: Ok!
+   - 5 Test Enqueue: Ok!
+   - 6 Test Size: Ok!
+   - 7 Test Size: Ok!
+   - 8 Test HeadNDequeue: Ok!
+   - 9 Test Head: Ok!
+   - 10 Test Enqueue: Ok!
+   - 11 Test Enqueue: Ok!
+   - 12 Test Head: Ok!
+   - 13 Test HeadNDequeue: Ok!
+   - 14 Test Dequeue: Ok!
+   - 15 Test Head: Ok!
+   - 16 Test Clear: Ok!
+   - 17 Test HeadNDequeue: 2) End of a single test unit (Errors/Try/Tests: 1/17/17)
+3) Begin of a single test unit
+   - 1 Test Size: Ok!
+   - 2 Test IsEmpty: Ok!
+   - 3 Test Size-IsEmpty Consistency: Ok!
+3) End of a single test unit (Errors/Try/Tests: 0/3/3)
+4) Begin of a single test unit
+   - 1 Test Enqueue: Ok!
+   - 2 Test Insert: Ok!
+   - 3 Test Enqueue: Ok!
+   - 4 Test Insert: Ok!
+   - 5 Test Enqueue: Ok!
+   - 6 Test Size: Ok!
+   - 7 Test Size: Ok!
+   - 8 Test IsEmpty: Ok!
+   - 9 Test Size-IsEmpty Consistency: Ok!
+4) End of a single test unit (Errors/Try/Tests: 0/9/9)
+End of all test units (Errors/Try/Tests: 4/30/32)
+****************************************************
+Total test units up to now (Errors/Try/Tests: 154/58/202)
+****************************************************
+03 - DynVectorI (err/try/tot): 64/8/69
+09 - VStackI (err/try/tot): 28/7/32
+12 - LLQueueI (err/try/tot): 4/30/32
+15 - VOrderedSetI (err/try/tot): 58/13/69
+****************************************************
+
+**** VQueueI ***************************************
+Begin of all test units [VQueueITest]
+1) Begin of a single test unit
+   - 1 Test Head: 1) End of a single test unit (Errors/Try/Tests: 3/1/3)
+2) Begin of a single test unit
+   - 1 Test Enqueue: 2) End of a single test unit (Errors/Try/Tests: 17/1/17)
+3) Begin of a single test unit
+   - 1 Test Size: Ok!
+   - 2 Test IsEmpty: Ok!
+   - 3 Test Size-IsEmpty Consistency: Ok!
+3) End of a single test unit (Errors/Try/Tests: 0/3/3)
+4) Begin of a single test unit
+   - 1 Test Enqueue: 4) End of a single test unit (Errors/Try/Tests: 9/1/9)
+End of all test units (Errors/Try/Tests: 29/6/32)
+****************************************************
+Total test units up to now (Errors/Try/Tests: 183/64/234)
+****************************************************
+03 - DynVectorI (err/try/tot): 64/8/69
+09 - VStackI (err/try/tot): 28/7/32
+11 - VQueueI (err/try/tot): 29/6/32
+12 - LLQueueI (err/try/tot): 4/30/32
+15 - VOrderedSetI (err/try/tot): 58/13/69
+****************************************************
+
+**** LLStackI **************************************
+Begin of all test units [LLStackITest]
+1) Begin of a single test unit
+   - 1 Test Top: Ok!
+   - 2 Test Pop: 1) End of a single test unit (Errors/Try/Tests: 2/2/3)
+2) Begin of a single test unit
+   - 1 Test Insert: Ok!
+   - 2 Test Push: Ok!
+   - 3 Test Insert: Ok!
+   - 4 Test Push: Ok!
+   - 5 Test Insert: Ok!
+   - 6 Test Size: Ok!
+   - 7 Test Size: Ok!
+   - 8 Test TopNPop: Ok!
+   - 9 Test Top: Ok!
+   - 10 Test Push: Ok!
+   - 11 Test Push: Ok!
+   - 12 Test Top: Ok!
+   - 13 Test TopNPop: Ok!
+   - 14 Test Pop: Ok!
+   - 15 Test Top: Ok!
+   - 16 Test Clear: Ok!
+   - 17 Test TopNPop: 2) End of a single test unit (Errors/Try/Tests: 1/17/17)
+3) Begin of a single test unit
+   - 1 Test Size: Ok!
+   - 2 Test IsEmpty: Ok!
+   - 3 Test Size-IsEmpty Consistency: Ok!
+3) End of a single test unit (Errors/Try/Tests: 0/3/3)
+4) Begin of a single test unit
+   - 1 Test Insert: Ok!
+   - 2 Test Push: Ok!
+   - 3 Test Insert: Ok!
+   - 4 Test Push: Ok!
+   - 5 Test Insert: Ok!
+   - 6 Test Size: Ok!
+   - 7 Test Size: Ok!
+   - 8 Test IsEmpty: Ok!
+   - 9 Test Size-IsEmpty Consistency: Ok!
+4) End of a single test unit (Errors/Try/Tests: 0/9/9)
+End of all test units (Errors/Try/Tests: 3/31/32)
+****************************************************
+Total test units up to now (Errors/Try/Tests: 186/95/266)
+****************************************************
+03 - DynVectorI (err/try/tot): 64/8/69
+09 - VStackI (err/try/tot): 28/7/32
+10 - LLStackI (err/try/tot): 3/31/32
+11 - VQueueI (err/try/tot): 29/6/32
+12 - LLQueueI (err/try/tot): 4/30/32
+15 - VOrderedSetI (err/try/tot): 58/13/69
+****************************************************
+
+**** VSortedChainI *********************************
+Begin of all test units [VSortedChainITest]
+1) Begin of a single test unit
+   - 1 Test GetFirst: 1) End of a single test unit (Errors/Try/Tests: 9/1/9)
+2) Begin of a single test unit
+   - 1 Test Insert: 2) End of a single test unit (Errors/Try/Tests: 30/1/30)
+3) Begin of a single test unit
+   - 1 Test Size: Ok!
+   - 2 Test IsEmpty: Ok!
+   - 3 Test Size-IsEmpty Consistency: Ok!
+3) End of a single test unit (Errors/Try/Tests: 0/3/3)
+4) Begin of a single test unit
+   - 1 Test Insert: 4) End of a single test unit (Errors/Try/Tests: 14/1/14)
+End of all test units (Errors/Try/Tests: 53/6/56)
+****************************************************
+Total test units up to now (Errors/Try/Tests: 239/101/322)
+****************************************************
+03 - DynVectorI (err/try/tot): 64/8/69
+07 - VSortedChainI (err/try/tot): 53/6/56
+09 - VStackI (err/try/tot): 28/7/32
+10 - LLStackI (err/try/tot): 3/31/32
+11 - VQueueI (err/try/tot): 29/6/32
+12 - LLQueueI (err/try/tot): 4/30/32
+15 - VOrderedSetI (err/try/tot): 58/13/69
+****************************************************
+
+**** VListI ****************************************
+Begin of all test units [VListITest]
+1) Begin of a single test unit
+   - 1 Test GetFirst: 1) End of a single test unit (Errors/Try/Tests: 12/1/12)
+2) Begin of a single test unit
+   - 1 Test Insert: 2) End of a single test unit (Errors/Try/Tests: 33/1/33)
+3) Begin of a single test unit
+   - 1 Test Size: Ok!
+   - 2 Test IsEmpty: Ok!
+   - 3 Test Size-IsEmpty Consistency: Ok!
+3) End of a single test unit (Errors/Try/Tests: 0/3/3)
+4) Begin of a single test unit
+   - 1 Test Insert: 4) End of a single test unit (Errors/Try/Tests: 14/1/14)
+End of all test units (Errors/Try/Tests: 59/6/62)
+****************************************************
+Total test units up to now (Errors/Try/Tests: 298/107/384)
+****************************************************
+03 - DynVectorI (err/try/tot): 64/8/69
+05 - VListI (err/try/tot): 59/6/62
+07 - VSortedChainI (err/try/tot): 53/6/56
+09 - VStackI (err/try/tot): 28/7/32
+10 - LLStackI (err/try/tot): 3/31/32
+11 - VQueueI (err/try/tot): 29/6/32
+12 - LLQueueI (err/try/tot): 4/30/32
+15 - VOrderedSetI (err/try/tot): 58/13/69
+****************************************************
+
+**** DynCircularVectorI ****************************
+Begin of all test units [DynCircularVectorITest]
+1) Begin of a single test unit
+   - 1 Test GetFirst: 1) End of a single test unit (Errors/Try/Tests: 9/1/9)
+2) Begin of a single test unit
+   - 1 Test SetFirst: Ok!
+   - 2 Test ExpandWithNumber: 2) End of a single test unit (Errors/Try/Tests: 40/2/41)
+3) Begin of a single test unit
+   - 1 Test Size: Ok!
+   - 2 Test IsEmpty: Ok!
+   - 3 Test Size-IsEmpty Consistency: Ok!
+3) End of a single test unit (Errors/Try/Tests: 0/3/3)
+4) Begin of a single test unit
+   - 1 Test SetFirst: Ok!
+   - 2 Test ExpandWithNumber: 4) End of a single test unit (Errors/Try/Tests: 15/2/16)
+End of all test units (Errors/Try/Tests: 64/8/69)
+****************************************************
+Total test units up to now (Errors/Try/Tests: 362/115/453)
+****************************************************
+03 - DynVectorI (err/try/tot): 64/8/69
+04 - DynCircularVectorI (err/try/tot): 64/8/69
+05 - VListI (err/try/tot): 59/6/62
+07 - VSortedChainI (err/try/tot): 53/6/56
+09 - VStackI (err/try/tot): 28/7/32
+10 - LLStackI (err/try/tot): 3/31/32
+11 - VQueueI (err/try/tot): 29/6/32
+12 - LLQueueI (err/try/tot): 4/30/32
+15 - VOrderedSetI (err/try/tot): 58/13/69
+****************************************************
+
+**** CircularVectorI *******************************
+Begin of all test units [CircularVectorITest]
+1) Begin of a single test unit
+   - 1 Test GetFirst: 1) End of a single test unit (Errors/Try/Tests: 9/1/9)
+2) Begin of a single test unit
+   - 1 Test SetFirst: Ok!
+   - 2 Test Realloc: Ok!
+   - 3 Test SetFirst: Ok!
+   - 4 Test Realloc: Ok!
+   - 5 Test Size: Ok!
+   - 6 Test Swap: Ok!
+   - 7 Test SetFirst: Ok!
+   - 8 Test SetAt: Ok!
+   - 9 Test SetAt: Ok!
+   - 10 Test SetAt: 2) End of a single test unit (Errors/Try/Tests: 29/10/38)
+3) Begin of a single test unit
+   - 1 Test Size: Ok!
+   - 2 Test IsEmpty: Ok!
+   - 3 Test Size-IsEmpty Consistency: Ok!
+3) End of a single test unit (Errors/Try/Tests: 0/3/3)
+4) Begin of a single test unit
+   - 1 Test SetFirst: Ok!
+   - 2 Test Realloc: Ok!
+   - 3 Test SetFirst: Ok!
+   - 4 Test Realloc: Ok!
+   - 5 Test Size: Ok!
+   - 6 Test Swap: Ok!
+   - 7 Test SetFirst: Ok!
+   - 8 Test SetAt: Ok!
+   - 9 Test SetAt: Ok!
+   - 10 Test SetAt: 4) End of a single test unit (Errors/Try/Tests: 7/10/16)
+End of all test units (Errors/Try/Tests: 45/24/66)
+****************************************************
+Total test units up to now (Errors/Try/Tests: 407/139/519)
+****************************************************
+02 - CircularVectorI (err/try/tot): 45/24/66
+03 - DynVectorI (err/try/tot): 64/8/69
+04 - DynCircularVectorI (err/try/tot): 64/8/69
+05 - VListI (err/try/tot): 59/6/62
+07 - VSortedChainI (err/try/tot): 53/6/56
+09 - VStackI (err/try/tot): 28/7/32
+10 - LLStackI (err/try/tot): 3/31/32
+11 - VQueueI (err/try/tot): 29/6/32
+12 - LLQueueI (err/try/tot): 4/30/32
+15 - VOrderedSetI (err/try/tot): 58/13/69
+****************************************************
+
+**** VSetI *****************************************
+Begin of all test units [VSetITest]
+1) Begin of a single test unit
+   - 1 Test Exists: Ok!
+   - 2 Test Filter: Ok!
+   - 3 Test Union: Ok!
+   - 4 Test Intersection: Ok!
+   - 5 Test Difference: Ok!
+   - 6 Test Size: Ok!
+1) End of a single test unit (Errors/Try/Tests: 0/6/6)
+2) Begin of a single test unit
+   - 1 Test Insert: 2) End of a single test unit (Errors/Try/Tests: 51/1/51)
+3) Begin of a single test unit
+   - 1 Test Size: Ok!
+   - 2 Test IsEmpty: Ok!
+   - 3 Test Size-IsEmpty Consistency: Ok!
+3) End of a single test unit (Errors/Try/Tests: 0/3/3)
+4) Begin of a single test unit
+   - 1 Test Insert: 4) End of a single test unit (Errors/Try/Tests: 13/1/13)
+End of all test units (Errors/Try/Tests: 64/11/73)
+****************************************************
+Total test units up to now (Errors/Try/Tests: 471/150/592)
+****************************************************
+02 - CircularVectorI (err/try/tot): 45/24/66
+03 - DynVectorI (err/try/tot): 64/8/69
+04 - DynCircularVectorI (err/try/tot): 64/8/69
+05 - VListI (err/try/tot): 59/6/62
+07 - VSortedChainI (err/try/tot): 53/6/56
+09 - VStackI (err/try/tot): 28/7/32
+10 - LLStackI (err/try/tot): 3/31/32
+11 - VQueueI (err/try/tot): 29/6/32
+12 - LLQueueI (err/try/tot): 4/30/32
+13 - VSetI (err/try/tot): 64/11/73
+15 - VOrderedSetI (err/try/tot): 58/13/69
+****************************************************
+
+**** LLListI ***************************************
+Begin of all test units [LLListITest]
+1) Begin of a single test unit
+   - 1 Test GetFirst: 1) End of a single test unit (Errors/Try/Tests: 12/1/12)
+2) Begin of a single test unit
+   - 1 Test Insert: Ok!
+   - 2 Test InsertLast: Ok!
+   - 3 Test InsertFirst: Ok!
+   - 4 Test InsertLast: Ok!
+   - 5 Test InsertFirst: Ok!
+   - 6 Test InsertFirst: Ok!
+   - 7 Test Insert: Ok!
+   - 8 Test Insert: Ok!
+   - 9 Test InsertLast: Ok!
+   - 10 Test Size: Ok!
+   - 11 Test TraverseForward: 1 2 5 0 4 9 0 5 1 Ok!
+   - 12 Test GetFirst: 2) End of a single test unit (Errors/Try/Tests: 22/12/33)
+3) Begin of a single test unit
+   - 1 Test Size: Ok!
+   - 2 Test IsEmpty: Ok!
+   - 3 Test Size-IsEmpty Consistency: Ok!
+3) End of a single test unit (Errors/Try/Tests: 0/3/3)
+4) Begin of a single test unit
+   - 1 Test Insert: Ok!
+   - 2 Test InsertLast: Ok!
+   - 3 Test InsertFirst: Ok!
+   - 4 Test InsertLast: Ok!
+   - 5 Test InsertFirst: Ok!
+   - 6 Test InsertFirst: Ok!
+   - 7 Test Insert: Ok!
+   - 8 Test Insert: Ok!
+   - 9 Test InsertLast: Ok!
+   - 10 Test Size: Ok!
+   - 11 Test TraverseForward: 1 2 5 0 4 9 0 5 1 Ok!
+   - 12 Test Size: Ok!
+   - 13 Test IsEmpty: Ok!
+   - 14 Test Size-IsEmpty Consistency: Ok!
+4) End of a single test unit (Errors/Try/Tests: 0/14/14)
+End of all test units (Errors/Try/Tests: 34/30/62)
+****************************************************
+Total test units up to now (Errors/Try/Tests: 505/180/654)
+****************************************************
+02 - CircularVectorI (err/try/tot): 45/24/66
+03 - DynVectorI (err/try/tot): 64/8/69
+04 - DynCircularVectorI (err/try/tot): 64/8/69
+05 - VListI (err/try/tot): 59/6/62
+06 - LLListI (err/try/tot): 34/30/62
+07 - VSortedChainI (err/try/tot): 53/6/56
+09 - VStackI (err/try/tot): 28/7/32
+10 - LLStackI (err/try/tot): 3/31/32
+11 - VQueueI (err/try/tot): 29/6/32
+12 - LLQueueI (err/try/tot): 4/30/32
+13 - VSetI (err/try/tot): 64/11/73
+15 - VOrderedSetI (err/try/tot): 58/13/69
+****************************************************
+
+**** LLOrderedSetI *********************************
+Begin of all test units [LLOrderedSetITest]
+1) Begin of a single test unit
+1) End of a single test unit (Errors/Try/Tests: 8/0/8)
+2) Begin of a single test unit
+2) End of a single test unit (Errors/Try/Tests: 45/0/45)
+3) Begin of a single test unit
+3) End of a single test unit (Errors/Try/Tests: 3/0/3)
+4) Begin of a single test unit
+4) End of a single test unit (Errors/Try/Tests: 13/0/13)
+End of all test units (Errors/Try/Tests: 69/0/69)
+****************************************************
+Total test units up to now (Errors/Try/Tests: 574/180/723)
+****************************************************
+02 - CircularVectorI (err/try/tot): 45/24/66
+03 - DynVectorI (err/try/tot): 64/8/69
+04 - DynCircularVectorI (err/try/tot): 64/8/69
+05 - VListI (err/try/tot): 59/6/62
+06 - LLListI (err/try/tot): 34/30/62
+07 - VSortedChainI (err/try/tot): 53/6/56
+09 - VStackI (err/try/tot): 28/7/32
+10 - LLStackI (err/try/tot): 3/31/32
+11 - VQueueI (err/try/tot): 29/6/32
+12 - LLQueueI (err/try/tot): 4/30/32
+13 - VSetI (err/try/tot): 64/11/73
+15 - VOrderedSetI (err/try/tot): 58/13/69
+16 - LLOrderedSetI (err/try/tot): 69/0/69
+****************************************************
+
+**** LLSetI ****************************************
+Begin of all test units [LLSetITest]
+1) Begin of a single test unit
+1) End of a single test unit (Errors/Try/Tests: 6/0/6)
+2) Begin of a single test unit
+2) End of a single test unit (Errors/Try/Tests: 51/0/51)
+3) Begin of a single test unit
+3) End of a single test unit (Errors/Try/Tests: 3/0/3)
+4) Begin of a single test unit
+4) End of a single test unit (Errors/Try/Tests: 13/0/13)
+End of all test units (Errors/Try/Tests: 73/0/73)
+****************************************************
+Total test units up to now (Errors/Try/Tests: 647/180/796)
+****************************************************
+02 - CircularVectorI (err/try/tot): 45/24/66
+03 - DynVectorI (err/try/tot): 64/8/69
+04 - DynCircularVectorI (err/try/tot): 64/8/69
+05 - VListI (err/try/tot): 59/6/62
+06 - LLListI (err/try/tot): 34/30/62
+07 - VSortedChainI (err/try/tot): 53/6/56
+09 - VStackI (err/try/tot): 28/7/32
+10 - LLStackI (err/try/tot): 3/31/32
+11 - VQueueI (err/try/tot): 29/6/32
+12 - LLQueueI (err/try/tot): 4/30/32
+13 - VSetI (err/try/tot): 64/11/73
+14 - LLSetI (err/try/tot): 73/0/73
+15 - VOrderedSetI (err/try/tot): 58/13/69
+16 - LLOrderedSetI (err/try/tot): 69/0/69
+****************************************************
+
+**** LLSortedChainI ********************************
+Begin of all test units [LLSortedChainITest]
+1) Begin of a single test unit
+   - 1 Test GetFirst: 1) End of a single test unit (Errors/Try/Tests: 9/1/9)
+2) Begin of a single test unit
+   - 1 Test Insert: Ok!
+   - 2 Test Insert: Ok!
+   - 3 Test Insert: Ok!
+   - 4 Test Insert: Ok!
+   - 5 Test Insert: Ok!
+   - 6 Test Insert: Ok!
+   - 7 Test Insert: Ok!
+   - 8 Test Insert: Ok!
+   - 9 Test Insert: Ok!
+   - 10 Test Size: Ok!
+   - 11 Test TraverseForward: 0 0 1 1 2 4 5 5 9 Ok!
+   - 12 Test GetFirst: Ok!
+   - 13 Test GetLast: Ok!
+   - 14 Test GetAt: Ok!
+   - 15 Test Exists: Ok!
+   - 16 Test TraverseForward: 0 0 1 1 2 4 5 5 9 Ok!
+   - 17 Test FoldForward: Ok!
+   - 18 Test FoldBackward: Ok!
+   - 19 Test RemoveFirst: Ok!
+   - 20 Test FoldForward: Ok!
+   - 21 Test RemoveLast: Ok!
+   - 22 Test FoldForward: Ok!
+   - 23 Test AtNRemove: Ok!
+   - 24 Test FoldBackward: Ok!
+   - 25 Test Size: Ok!
+   - 26 Test Insert: Ok!
+   - 27 Test TraverseForward: 0 1 1 2 3 4 5 Ok!
+   - 28 Test FoldBackward: Ok!
+   - 29 Test Clear: Ok!
+   - 30 Test Size: Ok!
+2) End of a single test unit (Errors/Try/Tests: 0/30/30)
+3) Begin of a single test unit
+   - 1 Test Size: Ok!
+   - 2 Test IsEmpty: Ok!
+   - 3 Test Size-IsEmpty Consistency: Ok!
+3) End of a single test unit (Errors/Try/Tests: 0/3/3)
+4) Begin of a single test unit
+   - 1 Test Insert: Ok!
+   - 2 Test Insert: Ok!
+   - 3 Test Insert: Ok!
+   - 4 Test Insert: Ok!
+   - 5 Test Insert: Ok!
+   - 6 Test Insert: Ok!
+   - 7 Test Insert: Ok!
+   - 8 Test Insert: Ok!
+   - 9 Test Insert: Ok!
+   - 10 Test Size: Ok!
+   - 11 Test TraverseForward: 0 0 1 1 2 4 5 5 9 Ok!
+   - 12 Test Size: Ok!
+   - 13 Test IsEmpty: Ok!
+   - 14 Test Size-IsEmpty Consistency: Ok!
+4) End of a single test unit (Errors/Try/Tests: 0/14/14)
+End of all test units (Errors/Try/Tests: 9/48/56)
+****************************************************
+Total test units up to now (Errors/Try/Tests: 656/228/852)
+****************************************************
+02 - CircularVectorI (err/try/tot): 45/24/66
+03 - DynVectorI (err/try/tot): 64/8/69
+04 - DynCircularVectorI (err/try/tot): 64/8/69
+05 - VListI (err/try/tot): 59/6/62
+06 - LLListI (err/try/tot): 34/30/62
+07 - VSortedChainI (err/try/tot): 53/6/56
+08 - LLSortedChainI (err/try/tot): 9/48/56
+09 - VStackI (err/try/tot): 28/7/32
+10 - LLStackI (err/try/tot): 3/31/32
+11 - VQueueI (err/try/tot): 29/6/32
+12 - LLQueueI (err/try/tot): 4/30/32
+13 - VSetI (err/try/tot): 64/11/73
+14 - LLSetI (err/try/tot): 73/0/73
+15 - VOrderedSetI (err/try/tot): 58/13/69
+16 - LLOrderedSetI (err/try/tot): 69/0/69
+****************************************************
+
+**** VectorI ***************************************
+Begin of all test units [VectorITest]
+1) Begin of a single test unit
+   - 1 Test GetFirst: 1) End of a single test unit (Errors/Try/Tests: 9/1/9)
+2) Begin of a single test unit
+   - 1 Test SetFirst: Ok!
+   - 2 Test Realloc: Ok!
+   - 3 Test SetFirst: 2) End of a single test unit (Errors/Try/Tests: 36/3/38)
+3) Begin of a single test unit
+   - 1 Test Size: Ok!
+   - 2 Test IsEmpty: Ok!
+   - 3 Test Size-IsEmpty Consistency: Ok!
+3) End of a single test unit (Errors/Try/Tests: 0/3/3)
+4) Begin of a single test unit
+   - 1 Test SetFirst: Ok!
+   - 2 Test Realloc: Ok!
+   - 3 Test SetFirst: 4) End of a single test unit (Errors/Try/Tests: 14/3/16)
+End of all test units (Errors/Try/Tests: 59/10/66)
+****************************************************
+Total test units up to now (Errors/Try/Tests: 715/238/918)
+****************************************************
+01 - VectorI (err/try/tot): 59/10/66
+02 - CircularVectorI (err/try/tot): 45/24/66
+03 - DynVectorI (err/try/tot): 64/8/69
+04 - DynCircularVectorI (err/try/tot): 64/8/69
+05 - VListI (err/try/tot): 59/6/62
+06 - LLListI (err/try/tot): 34/30/62
+07 - VSortedChainI (err/try/tot): 53/6/56
+08 - LLSortedChainI (err/try/tot): 9/48/56
+09 - VStackI (err/try/tot): 28/7/32
+10 - LLStackI (err/try/tot): 3/31/32
+11 - VQueueI (err/try/tot): 29/6/32
+12 - LLQueueI (err/try/tot): 4/30/32
+13 - VSetI (err/try/tot): 64/11/73
+14 - LLSetI (err/try/tot): 73/0/73
+15 - VOrderedSetI (err/try/tot): 58/13/69
+16 - LLOrderedSetI (err/try/tot): 69/0/69
+****************************************************
+
+[36m╷[0m
+[36m├─[0m [36mJUnit Platform Suite[0m [32m✔[0m
+[36m├─[0m [36mJUnit Jupiter[0m [32m✔[0m
+[36m│  ├─[0m [36mVOrderedSetITest[0m [32m✔[0m
+[36m│  │  ├─[0m [36mWOrderedSet Basics[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mCheck starting from an Empty WOrderedSet[0m [32m✔[0m
+[36m│  │  │  └─[0m [31mCheck starting from a NonEmpty WOrderedSet[0m [31m✘[0m [31mIndex out of bounds: 0; Size: 0![0m
+[36m│  │  └─[0m [36mContainer Basics[0m [32m✔[0m
+[36m│  │     ├─[0m [34mChecking Empty Container[0m [32m✔[0m
+[36m│  │     └─[0m [31mChecking NonEmpty Container[0m [31m✘[0m [31mIndex out of bounds: 0; Size: 0![0m
+[36m│  ├─[0m [36mVStackITest[0m [32m✔[0m
+[36m│  │  ├─[0m [36mStack Basics[0m [32m✔[0m
+[36m│  │  │  ├─[0m [31mCheck starting from an Empty Stack[0m [31m✘[0m [31mStack vuoto[0m
+[36m│  │  │  └─[0m [31mCheck starting from a NonEmpty Stack[0m [31m✘[0m [31mIndex out of bounds: 0; Size: 0![0m
+[36m│  │  └─[0m [36mContainer Basics[0m [32m✔[0m
+[36m│  │     ├─[0m [34mChecking Empty Container[0m [32m✔[0m
+[36m│  │     └─[0m [31mChecking NonEmpty Container[0m [31m✘[0m [31mIndex out of bounds: 0; Size: 0![0m
+[36m│  ├─[0m [36mDynVectorITest[0m [32m✔[0m
+[36m│  │  ├─[0m [36mVector Basics[0m [32m✔[0m
+[36m│  │  │  ├─[0m [31mCheck starting from an Empty Vector[0m [31m✘[0m [31mGetFirst should throw exception when sequence is empty ==> Unexpected exception type thrown, expected: <java.lang.IndexOutOfBoundsException> but was: <java.lang.IllegalStateException>[0m
+[36m│  │  │  └─[0m [31mCheck starting from a NonEmpty Vector[0m [31m✘[0m [31mSize should increase by 1 after Expand ==> expected: <1> but was: <0>[0m
+[36m│  │  └─[0m [36mContainer Basics[0m [32m✔[0m
+[36m│  │     ├─[0m [34mChecking Empty Container[0m [32m✔[0m
+[36m│  │     └─[0m [31mChecking NonEmpty Container[0m [31m✘[0m [31mSize should increase by 1 after Expand ==> expected: <1> but was: <0>[0m
+[36m│  ├─[0m [36mLLQueueITest[0m [32m✔[0m
+[36m│  │  ├─[0m [36mQueue Basics[0m [32m✔[0m
+[36m│  │  │  ├─[0m [31mCheck starting from an Empty Queue[0m [31m✘[0m [31mCoda vuota[0m
+[36m│  │  │  └─[0m [31mCheck starting from a NonEmpty Queue[0m [31m✘[0m [31mCoda vuota[0m
+[36m│  │  └─[0m [36mContainer Basics[0m [32m✔[0m
+[36m│  │     ├─[0m [34mChecking Empty Container[0m [32m✔[0m
+[36m│  │     └─[0m [34mChecking NonEmpty Container[0m [32m✔[0m
+[36m│  ├─[0m [36mVQueueITest[0m [32m✔[0m
+[36m│  │  ├─[0m [36mQueue Basics[0m [32m✔[0m
+[36m│  │  │  ├─[0m [31mCheck starting from an Empty Queue[0m [31m✘[0m [31mCoda vuota[0m
+[36m│  │  │  └─[0m [31mCheck starting from a NonEmpty Queue[0m [31m✘[0m [31mIndex out of bounds: 0; Size: 0![0m
+[36m│  │  └─[0m [36mContainer Basics[0m [32m✔[0m
+[36m│  │     ├─[0m [34mChecking Empty Container[0m [32m✔[0m
+[36m│  │     └─[0m [31mChecking NonEmpty Container[0m [31m✘[0m [31mIndex out of bounds: 0; Size: 0![0m
+[36m│  ├─[0m [36mLLStackITest[0m [32m✔[0m
+[36m│  │  ├─[0m [36mStack Basics[0m [32m✔[0m
+[36m│  │  │  ├─[0m [31mCheck starting from an Empty Stack[0m [31m✘[0m [31mStack vuoto[0m
+[36m│  │  │  └─[0m [31mCheck starting from a NonEmpty Stack[0m [31m✘[0m [31mStack vuoto[0m
+[36m│  │  └─[0m [36mContainer Basics[0m [32m✔[0m
+[36m│  │     ├─[0m [34mChecking Empty Container[0m [32m✔[0m
+[36m│  │     └─[0m [34mChecking NonEmpty Container[0m [32m✔[0m
+[36m│  ├─[0m [36mVSortedChainITest[0m [32m✔[0m
+[36m│  │  ├─[0m [36mSortedChain Basics[0m [32m✔[0m
+[36m│  │  │  ├─[0m [31mCheck starting from an Empty SortedChain[0m [31m✘[0m [31mGetFirst should throw exception when sequence is empty ==> Unexpected exception type thrown, expected: <java.lang.IndexOutOfBoundsException> but was: <java.lang.IllegalStateException>[0m
+[36m│  │  │  └─[0m [31mCheck starting from a NonEmpty SortedChain[0m [31m✘[0m [31mIndex out of bounds: 0; Size: 0![0m
+[36m│  │  └─[0m [36mContainer Basics[0m [32m✔[0m
+[36m│  │     ├─[0m [34mChecking Empty Container[0m [32m✔[0m
+[36m│  │     └─[0m [31mChecking NonEmpty Container[0m [31m✘[0m [31mIndex out of bounds: 0; Size: 0![0m
+[36m│  ├─[0m [36mVListITest[0m [32m✔[0m
+[36m│  │  ├─[0m [36mList Basics[0m [32m✔[0m
+[36m│  │  │  ├─[0m [31mCheck starting from an Empty List[0m [31m✘[0m [31mGetFirst should throw exception when sequence is empty ==> Unexpected exception type thrown, expected: <java.lang.IndexOutOfBoundsException> but was: <java.lang.IllegalStateException>[0m
+[36m│  │  │  └─[0m [31mCheck starting from a NonEmpty List[0m [31m✘[0m [31mIndex out of bounds: 0; Size: 0![0m
+[36m│  │  └─[0m [36mContainer Basics[0m [32m✔[0m
+[36m│  │     ├─[0m [34mChecking Empty Container[0m [32m✔[0m
+[36m│  │     └─[0m [31mChecking NonEmpty Container[0m [31m✘[0m [31mIndex out of bounds: 0; Size: 0![0m
+[36m│  ├─[0m [36mDynCircularVectorITest[0m [32m✔[0m
+[36m│  │  ├─[0m [36mVector Basics[0m [32m✔[0m
+[36m│  │  │  ├─[0m [31mCheck starting from an Empty Vector[0m [31m✘[0m [31mGetFirst should throw exception when sequence is empty ==> Unexpected exception type thrown, expected: <java.lang.IndexOutOfBoundsException> but was: <java.lang.IllegalStateException>[0m
+[36m│  │  │  └─[0m [31mCheck starting from a NonEmpty Vector[0m [31m✘[0m [31mSize should increase by 1 after Expand ==> expected: <1> but was: <0>[0m
+[36m│  │  └─[0m [36mContainer Basics[0m [32m✔[0m
+[36m│  │     ├─[0m [34mChecking Empty Container[0m [32m✔[0m
+[36m│  │     └─[0m [31mChecking NonEmpty Container[0m [31m✘[0m [31mSize should increase by 1 after Expand ==> expected: <1> but was: <0>[0m
+[36m│  ├─[0m [36mCircularVectorITest[0m [32m✔[0m
+[36m│  │  ├─[0m [36mVector Basics[0m [32m✔[0m
+[36m│  │  │  ├─[0m [31mCheck starting from an Empty Vector[0m [31m✘[0m [31mGetFirst should throw exception when sequence is empty ==> Unexpected exception type thrown, expected: <java.lang.IndexOutOfBoundsException> but was: <java.lang.IllegalStateException>[0m
+[36m│  │  │  └─[0m [31mCheck starting from a NonEmpty Vector[0m [31m✘[0m [31mSetAt should throw exception for invalid position ==> Expected java.lang.IndexOutOfBoundsException to be thrown, but nothing was thrown.[0m
+[36m│  │  └─[0m [36mContainer Basics[0m [32m✔[0m
+[36m│  │     ├─[0m [34mChecking Empty Container[0m [32m✔[0m
+[36m│  │     └─[0m [31mChecking NonEmpty Container[0m [31m✘[0m [31mSetAt should throw exception for invalid position ==> Expected java.lang.IndexOutOfBoundsException to be thrown, but nothing was thrown.[0m
+[36m│  ├─[0m [36mVSetITest[0m [32m✔[0m
+[36m│  │  ├─[0m [36mWSet Basics[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mCheck starting from an Empty WSet[0m [32m✔[0m
+[36m│  │  │  └─[0m [31mCheck starting from a NonEmpty WSet[0m [31m✘[0m [31mIndex out of bounds: 0; Size: 0![0m
+[36m│  │  └─[0m [36mContainer Basics[0m [32m✔[0m
+[36m│  │     ├─[0m [34mChecking Empty Container[0m [32m✔[0m
+[36m│  │     └─[0m [31mChecking NonEmpty Container[0m [31m✘[0m [31mIndex out of bounds: 0; Size: 0![0m
+[36m│  ├─[0m [36mLLListITest[0m [32m✔[0m
+[36m│  │  ├─[0m [36mList Basics[0m [32m✔[0m
+[36m│  │  │  ├─[0m [31mCheck starting from an Empty List[0m [31m✘[0m [31mGetFirst should throw exception when sequence is empty ==> Expected java.lang.IndexOutOfBoundsException to be thrown, but nothing was thrown.[0m
+[36m│  │  │  └─[0m [31mCheck starting from a NonEmpty List[0m [31m✘[0m [31mGetFirst should return 5 ==> expected: <5> but was: <1>[0m
+[36m│  │  └─[0m [36mContainer Basics[0m [32m✔[0m
+[36m│  │     ├─[0m [34mChecking Empty Container[0m [32m✔[0m
+[36m│  │     └─[0m [34mChecking NonEmpty Container[0m [32m✔[0m
+[36m│  ├─[0m [36mLLOrderedSetITest[0m [32m✔[0m
+[36m│  │  ├─[0m [36mWOrderedSet Basics[0m [32m✔[0m
+[36m│  │  │  ├─[0m [31mCheck starting from an Empty WOrderedSet[0m [31m✘[0m [31mclass apsd.classes.containers.collections.concretecollections.LLSortedChain cannot be cast to class apsd.classes.containers.collections.concretecollections.VSortedChain (apsd.classes.containers.collections.concretecollections.LLSortedChain and apsd.classes.containers.collections.concretecollections.VSortedChain are in unnamed module of loader java.net.URLClassLoader @5e57643e)[0m
+[36m│  │  │  └─[0m [31mCheck starting from a NonEmpty WOrderedSet[0m [31m✘[0m [31mclass apsd.classes.containers.collections.concretecollections.LLSortedChain cannot be cast to class apsd.classes.containers.collections.concretecollections.VSortedChain (apsd.classes.containers.collections.concretecollections.LLSortedChain and apsd.classes.containers.collections.concretecollections.VSortedChain are in unnamed module of loader java.net.URLClassLoader @5e57643e)[0m
+[36m│  │  └─[0m [36mContainer Basics[0m [32m✔[0m
+[36m│  │     ├─[0m [31mChecking Empty Container[0m [31m✘[0m [31mclass apsd.classes.containers.collections.concretecollections.LLSortedChain cannot be cast to class apsd.classes.containers.collections.concretecollections.VSortedChain (apsd.classes.containers.collections.concretecollections.LLSortedChain and apsd.classes.containers.collections.concretecollections.VSortedChain are in unnamed module of loader java.net.URLClassLoader @5e57643e)[0m
+[36m│  │     └─[0m [31mChecking NonEmpty Container[0m [31m✘[0m [31mclass apsd.classes.containers.collections.concretecollections.LLSortedChain cannot be cast to class apsd.classes.containers.collections.concretecollections.VSortedChain (apsd.classes.containers.collections.concretecollections.LLSortedChain and apsd.classes.containers.collections.concretecollections.VSortedChain are in unnamed module of loader java.net.URLClassLoader @5e57643e)[0m
+[36m│  ├─[0m [36mLLSetITest[0m [32m✔[0m
+[36m│  │  ├─[0m [36mWSet Basics[0m [32m✔[0m
+[36m│  │  │  ├─[0m [31mCheck starting from an Empty WSet[0m [31m✘[0m [31mclass apsd.classes.containers.collections.concretecollections.LLList cannot be cast to class apsd.classes.containers.collections.concretecollections.VList (apsd.classes.containers.collections.concretecollections.LLList and apsd.classes.containers.collections.concretecollections.VList are in unnamed module of loader java.net.URLClassLoader @5e57643e)[0m
+[36m│  │  │  └─[0m [31mCheck starting from a NonEmpty WSet[0m [31m✘[0m [31mclass apsd.classes.containers.collections.concretecollections.LLList cannot be cast to class apsd.classes.containers.collections.concretecollections.VList (apsd.classes.containers.collections.concretecollections.LLList and apsd.classes.containers.collections.concretecollections.VList are in unnamed module of loader java.net.URLClassLoader @5e57643e)[0m
+[36m│  │  └─[0m [36mContainer Basics[0m [32m✔[0m
+[36m│  │     ├─[0m [31mChecking Empty Container[0m [31m✘[0m [31mclass apsd.classes.containers.collections.concretecollections.LLList cannot be cast to class apsd.classes.containers.collections.concretecollections.VList (apsd.classes.containers.collections.concretecollections.LLList and apsd.classes.containers.collections.concretecollections.VList are in unnamed module of loader java.net.URLClassLoader @5e57643e)[0m
+[36m│  │     └─[0m [31mChecking NonEmpty Container[0m [31m✘[0m [31mclass apsd.classes.containers.collections.concretecollections.LLList cannot be cast to class apsd.classes.containers.collections.concretecollections.VList (apsd.classes.containers.collections.concretecollections.LLList and apsd.classes.containers.collections.concretecollections.VList are in unnamed module of loader java.net.URLClassLoader @5e57643e)[0m
+[36m│  ├─[0m [36mLLSortedChainITest[0m [32m✔[0m
+[36m│  │  ├─[0m [36mSortedChain Basics[0m [32m✔[0m
+[36m│  │  │  ├─[0m [31mCheck starting from an Empty SortedChain[0m [31m✘[0m [31mGetFirst should throw exception when sequence is empty ==> Expected java.lang.IndexOutOfBoundsException to be thrown, but nothing was thrown.[0m
+[36m│  │  │  └─[0m [34mCheck starting from a NonEmpty SortedChain[0m [32m✔[0m
+[36m│  │  └─[0m [36mContainer Basics[0m [32m✔[0m
+[36m│  │     ├─[0m [34mChecking Empty Container[0m [32m✔[0m
+[36m│  │     └─[0m [34mChecking NonEmpty Container[0m [32m✔[0m
+[36m│  ├─[0m [36mVectorITest[0m [32m✔[0m
+[36m│  │  ├─[0m [36mVector Basics[0m [32m✔[0m
+[36m│  │  │  ├─[0m [31mCheck starting from an Empty Vector[0m [31m✘[0m [31mGetFirst should throw exception when sequence is empty ==> Unexpected exception type thrown, expected: <java.lang.IndexOutOfBoundsException> but was: <java.lang.IllegalStateException>[0m
+[36m│  │  │  └─[0m [31mCheck starting from a NonEmpty Vector[0m [31m✘[0m [31mIndice non valido : 0[0m
+[36m│  │  └─[0m [36mContainer Basics[0m [32m✔[0m
+[36m│  │     ├─[0m [34mChecking Empty Container[0m [32m✔[0m
+[36m│  │     └─[0m [31mChecking NonEmpty Container[0m [31m✘[0m [31mIndice non valido : 0[0m
+[36m│  └─[0m [36mBox Tests[0m [32m✔[0m
+[36m│     ├─[0m [36mMutableReference Interface[0m [32m✔[0m
+[36m│     │  ├─[0m [34mTestGetNSet_Null()[0m [32m✔[0m
+[36m│     │  ├─[0m [34mTestGetNSet()[0m [32m✔[0m
+[36m│     │  ├─[0m [34mTestSet_NewValue()[0m [32m✔[0m
+[36m│     │  └─[0m [34mTestSet_NullValue()[0m [32m✔[0m
+[36m│     ├─[0m [36mReference Interface[0m [32m✔[0m
+[36m│     │  ├─[0m [34mTestIsNull_WithValue()[0m [32m✔[0m
+[36m│     │  ├─[0m [34mTestIsNull_NullValue()[0m [32m✔[0m
+[36m│     │  ├─[0m [34mTestGet_WithValue()[0m [32m✔[0m
+[36m│     │  └─[0m [34mTestGet_NullValue()[0m [32m✔[0m
+[36m│     ├─[0m [36mObject[0m [32m✔[0m
+[36m│     │  ├─[0m [34mTestToString()[0m [32m✔[0m
+[36m│     │  ├─[0m [34mTestEquals_DifferentValues()[0m [32m✔[0m
+[36m│     │  ├─[0m [34mTestEquals_NullValues()[0m [32m✔[0m
+[36m│     │  └─[0m [34mTestEquals_SameValue()[0m [32m✔[0m
+[36m│     └─[0m [36mConstructors & Assignments[0m [32m✔[0m
+[36m│        ├─[0m [34mTestCopyConstructor_NullSource()[0m [32m✔[0m
+[36m│        ├─[0m [34mTestParameterizedConstructor()[0m [32m✔[0m
+[36m│        ├─[0m [34mTestDefaultConstructor()[0m [32m✔[0m
+[36m│        ├─[0m [34mTestAssign()[0m [32m✔[0m
+[36m│        ├─[0m [34mTestCopyConstructor()[0m [32m✔[0m
+[36m│        └─[0m [34mTestAssign_NullSource()[0m [32m✔[0m
+[36m└─[0m [36mJUnit Vintage[0m [32m✔[0m
+
+Failures (43):
+  JUnit Jupiter:VOrderedSetITest:WOrderedSet Basics:Check starting from a NonEmpty WOrderedSet
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.collections.abstractcollections.generic.WOrderedSetITest$WOrderedSetBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => java.lang.IndexOutOfBoundsException: Index out of bounds: 0; Size: 0!
+       apsd.interfaces.containers.sequences.Sequence.ExcIfOutOfBound(Sequence.java:64)
+       apsd.interfaces.containers.sequences.Vector.ShiftRight(Vector.java:49)
+       apsd.interfaces.containers.sequences.DynVector.ShiftRight(DynVector.java:45)
+       apsd.interfaces.containers.sequences.Vector.ShiftRight(Vector.java:45)
+       apsd.interfaces.containers.sequences.DynVector.InsertAt(DynVector.java:21)
+       apsd.classes.containers.collections.concretecollections.VSortedChain.Insert(VSortedChain.java:73)
+       apsd.classes.containers.collections.concretecollections.VSortedChain.Insert(VSortedChain.java:11)
+       apsd.classes.containers.collections.abstractcollections.bases.WSetBase.Insert(WSetBase.java:50)
+       zapsdtest.testframework.containers.base.InsertableContainerTest.TestInsert(InsertableContainerTest.java:13)
+       zapsdtest.simpletest.apsd.classes.containers.collections.abstractcollections.generic.WOrderedSetITest.NewNonEmptyContainer(WOrderedSetITest.java:11)
+       [...]
+  JUnit Jupiter:VOrderedSetITest:Container Basics:Checking NonEmpty Container
+    MethodSource [className = 'zapsdtest.testframework.containers.ContainerBaseTest$ContainerBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => java.lang.IndexOutOfBoundsException: Index out of bounds: 0; Size: 0!
+       apsd.interfaces.containers.sequences.Sequence.ExcIfOutOfBound(Sequence.java:64)
+       apsd.interfaces.containers.sequences.Vector.ShiftRight(Vector.java:49)
+       apsd.interfaces.containers.sequences.DynVector.ShiftRight(DynVector.java:45)
+       apsd.interfaces.containers.sequences.Vector.ShiftRight(Vector.java:45)
+       apsd.interfaces.containers.sequences.DynVector.InsertAt(DynVector.java:21)
+       apsd.classes.containers.collections.concretecollections.VSortedChain.Insert(VSortedChain.java:73)
+       apsd.classes.containers.collections.concretecollections.VSortedChain.Insert(VSortedChain.java:11)
+       apsd.classes.containers.collections.abstractcollections.bases.WSetBase.Insert(WSetBase.java:50)
+       zapsdtest.testframework.containers.base.InsertableContainerTest.TestInsert(InsertableContainerTest.java:13)
+       zapsdtest.simpletest.apsd.classes.containers.collections.abstractcollections.generic.WOrderedSetITest.NewNonEmptyContainer(WOrderedSetITest.java:11)
+       [...]
+  JUnit Jupiter:VStackITest:Stack Basics:Check starting from an Empty Stack
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.deqs.generic.WStackITest$StackBasics', methodName = 'Empty', methodParameterTypes = '']
+    => java.lang.RuntimeException: Stack vuoto
+       apsd.classes.containers.deqs.WStack.Pop(WStack.java:110)
+       zapsdtest.testframework.containers.deqs.StackTest.TestPop(StackTest.java:22)
+       zapsdtest.simpletest.apsd.classes.containers.deqs.generic.WStackITest$StackBasics.Empty(WStackITest.java:29)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+  JUnit Jupiter:VStackITest:Stack Basics:Check starting from a NonEmpty Stack
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.deqs.generic.WStackITest$StackBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => java.lang.IndexOutOfBoundsException: Index out of bounds: 0; Size: 0!
+       apsd.interfaces.containers.sequences.Sequence.ExcIfOutOfBound(Sequence.java:64)
+       apsd.interfaces.containers.sequences.Vector.ShiftRight(Vector.java:49)
+       apsd.interfaces.containers.sequences.DynVector.ShiftRight(DynVector.java:45)
+       apsd.interfaces.containers.sequences.Vector.ShiftRight(Vector.java:45)
+       apsd.interfaces.containers.sequences.DynVector.InsertAt(DynVector.java:21)
+       apsd.classes.containers.collections.concretecollections.VList.InsertAt(VList.java:149)
+       apsd.classes.containers.deqs.WStack.Push(WStack.java:134)
+       apsd.interfaces.containers.deqs.Stack.Insert(Stack.java:46)
+       zapsdtest.testframework.containers.base.InsertableContainerTest.TestInsert(InsertableContainerTest.java:13)
+       zapsdtest.simpletest.apsd.classes.containers.deqs.generic.WStackITest.NewNonEmptyContainer(WStackITest.java:11)
+       [...]
+  JUnit Jupiter:VStackITest:Container Basics:Checking NonEmpty Container
+    MethodSource [className = 'zapsdtest.testframework.containers.ContainerBaseTest$ContainerBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => java.lang.IndexOutOfBoundsException: Index out of bounds: 0; Size: 0!
+       apsd.interfaces.containers.sequences.Sequence.ExcIfOutOfBound(Sequence.java:64)
+       apsd.interfaces.containers.sequences.Vector.ShiftRight(Vector.java:49)
+       apsd.interfaces.containers.sequences.DynVector.ShiftRight(DynVector.java:45)
+       apsd.interfaces.containers.sequences.Vector.ShiftRight(Vector.java:45)
+       apsd.interfaces.containers.sequences.DynVector.InsertAt(DynVector.java:21)
+       apsd.classes.containers.collections.concretecollections.VList.InsertAt(VList.java:149)
+       apsd.classes.containers.deqs.WStack.Push(WStack.java:134)
+       apsd.interfaces.containers.deqs.Stack.Insert(Stack.java:46)
+       zapsdtest.testframework.containers.base.InsertableContainerTest.TestInsert(InsertableContainerTest.java:13)
+       zapsdtest.simpletest.apsd.classes.containers.deqs.generic.WStackITest.NewNonEmptyContainer(WStackITest.java:11)
+       [...]
+  JUnit Jupiter:DynVectorITest:Vector Basics:Check starting from an Empty Vector
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.sequences.generic.XDynVectorITest$VectorBasics', methodName = 'Empty', methodParameterTypes = '']
+    => org.opentest4j.AssertionFailedError: GetFirst should throw exception when sequence is empty ==> Unexpected exception type thrown, expected: <java.lang.IndexOutOfBoundsException> but was: <java.lang.IllegalStateException>
+       org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+       org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:67)
+       org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:39)
+       org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3153)
+       zapsdtest.testframework.containers.sequences.SequenceTest.TestGetFirst(SequenceTest.java:29)
+       [...]
+     Caused by: java.lang.IllegalStateException: Sequenza vuota
+       apsd.interfaces.containers.sequences.Sequence.GetFirst(Sequence.java:22)
+       zapsdtest.testframework.containers.sequences.SequenceTest.lambda$TestGetFirst$0(SequenceTest.java:29)
+       org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+       [...]
+  JUnit Jupiter:DynVectorITest:Vector Basics:Check starting from a NonEmpty Vector
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.sequences.generic.XDynVectorITest$VectorBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => org.opentest4j.AssertionFailedError: Size should increase by 1 after Expand ==> expected: <1> but was: <0>
+       org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+       org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+       org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+       org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:166)
+       org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:664)
+       zapsdtest.testframework.containers.base.ResizableContainerTest.TestExpandWithNumber(ResizableContainerTest.java:33)
+       zapsdtest.simpletest.apsd.classes.containers.sequences.generic.XDynVectorITest.NewNonEmptyContainer(XDynVectorITest.java:14)
+       zapsdtest.simpletest.apsd.classes.containers.sequences.generic.XDynVectorITest$VectorBasics.NonEmpty(XDynVectorITest.java:52)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       [...]
+  JUnit Jupiter:DynVectorITest:Container Basics:Checking NonEmpty Container
+    MethodSource [className = 'zapsdtest.testframework.containers.ContainerBaseTest$ContainerBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => org.opentest4j.AssertionFailedError: Size should increase by 1 after Expand ==> expected: <1> but was: <0>
+       org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+       org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+       org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+       org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:166)
+       org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:664)
+       zapsdtest.testframework.containers.base.ResizableContainerTest.TestExpandWithNumber(ResizableContainerTest.java:33)
+       zapsdtest.simpletest.apsd.classes.containers.sequences.generic.XDynVectorITest.NewNonEmptyContainer(XDynVectorITest.java:14)
+       zapsdtest.testframework.containers.ContainerBaseTest$ContainerBasics.NonEmpty(ContainerBaseTest.java:125)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       [...]
+  JUnit Jupiter:LLQueueITest:Queue Basics:Check starting from an Empty Queue
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.deqs.generic.WQueueITest$QueueBasics', methodName = 'Empty', methodParameterTypes = '']
+    => java.lang.IllegalStateException: Coda vuota
+       apsd.classes.containers.deqs.WQueue.Head(WQueue.java:116)
+       zapsdtest.testframework.containers.deqs.QueueTest.TestHead(QueueTest.java:14)
+       zapsdtest.simpletest.apsd.classes.containers.deqs.generic.WQueueITest$QueueBasics.Empty(WQueueITest.java:28)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+  JUnit Jupiter:LLQueueITest:Queue Basics:Check starting from a NonEmpty Queue
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.deqs.generic.WQueueITest$QueueBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => java.lang.IllegalStateException: Coda vuota
+       apsd.classes.containers.deqs.WQueue.Head(WQueue.java:116)
+       apsd.classes.containers.deqs.WQueue.HeadNDequeue(WQueue.java:126)
+       zapsdtest.testframework.containers.deqs.QueueTest.TestHeadNDequeue(QueueTest.java:38)
+       zapsdtest.simpletest.apsd.classes.containers.deqs.generic.WQueueITest$QueueBasics.NonEmpty(WQueueITest.java:48)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+  JUnit Jupiter:VQueueITest:Queue Basics:Check starting from an Empty Queue
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.deqs.generic.WQueueITest$QueueBasics', methodName = 'Empty', methodParameterTypes = '']
+    => java.lang.IllegalStateException: Coda vuota
+       apsd.classes.containers.deqs.WQueue.Head(WQueue.java:116)
+       zapsdtest.testframework.containers.deqs.QueueTest.TestHead(QueueTest.java:14)
+       zapsdtest.simpletest.apsd.classes.containers.deqs.generic.WQueueITest$QueueBasics.Empty(WQueueITest.java:28)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+  JUnit Jupiter:VQueueITest:Queue Basics:Check starting from a NonEmpty Queue
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.deqs.generic.WQueueITest$QueueBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => java.lang.IndexOutOfBoundsException: Index out of bounds: 0; Size: 0!
+       apsd.interfaces.containers.sequences.Sequence.ExcIfOutOfBound(Sequence.java:64)
+       apsd.interfaces.containers.sequences.Vector.ShiftRight(Vector.java:49)
+       apsd.interfaces.containers.sequences.DynVector.ShiftRight(DynVector.java:45)
+       apsd.interfaces.containers.sequences.Vector.ShiftRight(Vector.java:45)
+       apsd.interfaces.containers.sequences.DynVector.InsertAt(DynVector.java:21)
+       apsd.classes.containers.collections.concretecollections.VList.InsertAt(VList.java:149)
+       apsd.classes.containers.deqs.WQueue.Enqueue(WQueue.java:133)
+       zapsdtest.testframework.containers.deqs.QueueTest.TestEnqueue(QueueTest.java:55)
+       zapsdtest.simpletest.apsd.classes.containers.deqs.generic.WQueueITest.NewNonEmptyContainer(WQueueITest.java:11)
+       zapsdtest.simpletest.apsd.classes.containers.deqs.generic.WQueueITest$QueueBasics.NonEmpty(WQueueITest.java:37)
+       [...]
+  JUnit Jupiter:VQueueITest:Container Basics:Checking NonEmpty Container
+    MethodSource [className = 'zapsdtest.testframework.containers.ContainerBaseTest$ContainerBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => java.lang.IndexOutOfBoundsException: Index out of bounds: 0; Size: 0!
+       apsd.interfaces.containers.sequences.Sequence.ExcIfOutOfBound(Sequence.java:64)
+       apsd.interfaces.containers.sequences.Vector.ShiftRight(Vector.java:49)
+       apsd.interfaces.containers.sequences.DynVector.ShiftRight(DynVector.java:45)
+       apsd.interfaces.containers.sequences.Vector.ShiftRight(Vector.java:45)
+       apsd.interfaces.containers.sequences.DynVector.InsertAt(DynVector.java:21)
+       apsd.classes.containers.collections.concretecollections.VList.InsertAt(VList.java:149)
+       apsd.classes.containers.deqs.WQueue.Enqueue(WQueue.java:133)
+       zapsdtest.testframework.containers.deqs.QueueTest.TestEnqueue(QueueTest.java:55)
+       zapsdtest.simpletest.apsd.classes.containers.deqs.generic.WQueueITest.NewNonEmptyContainer(WQueueITest.java:11)
+       zapsdtest.testframework.containers.ContainerBaseTest$ContainerBasics.NonEmpty(ContainerBaseTest.java:125)
+       [...]
+  JUnit Jupiter:LLStackITest:Stack Basics:Check starting from an Empty Stack
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.deqs.generic.WStackITest$StackBasics', methodName = 'Empty', methodParameterTypes = '']
+    => java.lang.RuntimeException: Stack vuoto
+       apsd.classes.containers.deqs.WStack.Pop(WStack.java:110)
+       zapsdtest.testframework.containers.deqs.StackTest.TestPop(StackTest.java:22)
+       zapsdtest.simpletest.apsd.classes.containers.deqs.generic.WStackITest$StackBasics.Empty(WStackITest.java:29)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+  JUnit Jupiter:LLStackITest:Stack Basics:Check starting from a NonEmpty Stack
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.deqs.generic.WStackITest$StackBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => java.lang.RuntimeException: Stack vuoto
+       apsd.classes.containers.deqs.WStack.Pop(WStack.java:110)
+       apsd.classes.containers.deqs.WStack.TopNPop(WStack.java:116)
+       zapsdtest.testframework.containers.deqs.StackTest.TestTopNPop(StackTest.java:38)
+       zapsdtest.simpletest.apsd.classes.containers.deqs.generic.WStackITest$StackBasics.NonEmpty(WStackITest.java:48)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+  JUnit Jupiter:VSortedChainITest:SortedChain Basics:Check starting from an Empty SortedChain
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.collections.concretecollections.generic.XSortedChainITest$SortedChainBasics', methodName = 'Empty', methodParameterTypes = '']
+    => org.opentest4j.AssertionFailedError: GetFirst should throw exception when sequence is empty ==> Unexpected exception type thrown, expected: <java.lang.IndexOutOfBoundsException> but was: <java.lang.IllegalStateException>
+       org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+       org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:67)
+       org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:39)
+       org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3153)
+       zapsdtest.testframework.containers.sequences.SequenceTest.TestGetFirst(SequenceTest.java:29)
+       [...]
+     Caused by: java.lang.IllegalStateException: Sequenza vuota
+       apsd.interfaces.containers.sequences.Sequence.GetFirst(Sequence.java:22)
+       zapsdtest.testframework.containers.sequences.SequenceTest.lambda$TestGetFirst$0(SequenceTest.java:29)
+       org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+       [...]
+  JUnit Jupiter:VSortedChainITest:SortedChain Basics:Check starting from a NonEmpty SortedChain
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.collections.concretecollections.generic.XSortedChainITest$SortedChainBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => java.lang.IndexOutOfBoundsException: Index out of bounds: 0; Size: 0!
+       apsd.interfaces.containers.sequences.Sequence.ExcIfOutOfBound(Sequence.java:64)
+       apsd.interfaces.containers.sequences.Vector.ShiftRight(Vector.java:49)
+       apsd.interfaces.containers.sequences.DynVector.ShiftRight(DynVector.java:45)
+       apsd.interfaces.containers.sequences.Vector.ShiftRight(Vector.java:45)
+       apsd.interfaces.containers.sequences.DynVector.InsertAt(DynVector.java:21)
+       apsd.classes.containers.collections.concretecollections.VSortedChain.Insert(VSortedChain.java:73)
+       apsd.classes.containers.collections.concretecollections.VSortedChain.Insert(VSortedChain.java:11)
+       zapsdtest.testframework.containers.base.InsertableContainerTest.TestInsert(InsertableContainerTest.java:13)
+       zapsdtest.simpletest.apsd.classes.containers.collections.concretecollections.generic.XSortedChainITest.NewNonEmptyContainer(XSortedChainITest.java:13)
+       zapsdtest.simpletest.apsd.classes.containers.collections.concretecollections.generic.XSortedChainITest$SortedChainBasics.NonEmpty(XSortedChainITest.java:50)
+       [...]
+  JUnit Jupiter:VSortedChainITest:Container Basics:Checking NonEmpty Container
+    MethodSource [className = 'zapsdtest.testframework.containers.ContainerBaseTest$ContainerBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => java.lang.IndexOutOfBoundsException: Index out of bounds: 0; Size: 0!
+       apsd.interfaces.containers.sequences.Sequence.ExcIfOutOfBound(Sequence.java:64)
+       apsd.interfaces.containers.sequences.Vector.ShiftRight(Vector.java:49)
+       apsd.interfaces.containers.sequences.DynVector.ShiftRight(DynVector.java:45)
+       apsd.interfaces.containers.sequences.Vector.ShiftRight(Vector.java:45)
+       apsd.interfaces.containers.sequences.DynVector.InsertAt(DynVector.java:21)
+       apsd.classes.containers.collections.concretecollections.VSortedChain.Insert(VSortedChain.java:73)
+       apsd.classes.containers.collections.concretecollections.VSortedChain.Insert(VSortedChain.java:11)
+       zapsdtest.testframework.containers.base.InsertableContainerTest.TestInsert(InsertableContainerTest.java:13)
+       zapsdtest.simpletest.apsd.classes.containers.collections.concretecollections.generic.XSortedChainITest.NewNonEmptyContainer(XSortedChainITest.java:13)
+       zapsdtest.testframework.containers.ContainerBaseTest$ContainerBasics.NonEmpty(ContainerBaseTest.java:125)
+       [...]
+  JUnit Jupiter:VListITest:List Basics:Check starting from an Empty List
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.collections.concretecollections.generic.XListITest$ListBasics', methodName = 'Empty', methodParameterTypes = '']
+    => org.opentest4j.AssertionFailedError: GetFirst should throw exception when sequence is empty ==> Unexpected exception type thrown, expected: <java.lang.IndexOutOfBoundsException> but was: <java.lang.IllegalStateException>
+       org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+       org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:67)
+       org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:39)
+       org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3153)
+       zapsdtest.testframework.containers.sequences.SequenceTest.TestGetFirst(SequenceTest.java:29)
+       [...]
+     Caused by: java.lang.IllegalStateException: Sequenza vuota
+       apsd.interfaces.containers.sequences.Sequence.GetFirst(Sequence.java:22)
+       zapsdtest.testframework.containers.sequences.SequenceTest.lambda$TestGetFirst$0(SequenceTest.java:29)
+       org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+       [...]
+  JUnit Jupiter:VListITest:List Basics:Check starting from a NonEmpty List
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.collections.concretecollections.generic.XListITest$ListBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => java.lang.IndexOutOfBoundsException: Index out of bounds: 0; Size: 0!
+       apsd.interfaces.containers.sequences.Sequence.ExcIfOutOfBound(Sequence.java:64)
+       apsd.interfaces.containers.sequences.Vector.ShiftRight(Vector.java:49)
+       apsd.interfaces.containers.sequences.DynVector.ShiftRight(DynVector.java:45)
+       apsd.interfaces.containers.sequences.Vector.ShiftRight(Vector.java:45)
+       apsd.interfaces.containers.sequences.DynVector.InsertAt(DynVector.java:21)
+       apsd.classes.containers.collections.concretecollections.VList.InsertAt(VList.java:149)
+       apsd.interfaces.containers.collections.List.Insert(List.java:37)
+       zapsdtest.testframework.containers.base.InsertableContainerTest.TestInsert(InsertableContainerTest.java:13)
+       zapsdtest.simpletest.apsd.classes.containers.collections.concretecollections.generic.XListITest.NewNonEmptyContainer(XListITest.java:13)
+       zapsdtest.simpletest.apsd.classes.containers.collections.concretecollections.generic.XListITest$ListBasics.NonEmpty(XListITest.java:53)
+       [...]
+  JUnit Jupiter:VListITest:Container Basics:Checking NonEmpty Container
+    MethodSource [className = 'zapsdtest.testframework.containers.ContainerBaseTest$ContainerBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => java.lang.IndexOutOfBoundsException: Index out of bounds: 0; Size: 0!
+       apsd.interfaces.containers.sequences.Sequence.ExcIfOutOfBound(Sequence.java:64)
+       apsd.interfaces.containers.sequences.Vector.ShiftRight(Vector.java:49)
+       apsd.interfaces.containers.sequences.DynVector.ShiftRight(DynVector.java:45)
+       apsd.interfaces.containers.sequences.Vector.ShiftRight(Vector.java:45)
+       apsd.interfaces.containers.sequences.DynVector.InsertAt(DynVector.java:21)
+       apsd.classes.containers.collections.concretecollections.VList.InsertAt(VList.java:149)
+       apsd.interfaces.containers.collections.List.Insert(List.java:37)
+       zapsdtest.testframework.containers.base.InsertableContainerTest.TestInsert(InsertableContainerTest.java:13)
+       zapsdtest.simpletest.apsd.classes.containers.collections.concretecollections.generic.XListITest.NewNonEmptyContainer(XListITest.java:13)
+       zapsdtest.testframework.containers.ContainerBaseTest$ContainerBasics.NonEmpty(ContainerBaseTest.java:125)
+       [...]
+  JUnit Jupiter:DynCircularVectorITest:Vector Basics:Check starting from an Empty Vector
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.sequences.generic.XDynVectorITest$VectorBasics', methodName = 'Empty', methodParameterTypes = '']
+    => org.opentest4j.AssertionFailedError: GetFirst should throw exception when sequence is empty ==> Unexpected exception type thrown, expected: <java.lang.IndexOutOfBoundsException> but was: <java.lang.IllegalStateException>
+       org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+       org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:67)
+       org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:39)
+       org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3153)
+       zapsdtest.testframework.containers.sequences.SequenceTest.TestGetFirst(SequenceTest.java:29)
+       [...]
+     Caused by: java.lang.IllegalStateException: Sequenza vuota
+       apsd.interfaces.containers.sequences.Sequence.GetFirst(Sequence.java:22)
+       zapsdtest.testframework.containers.sequences.SequenceTest.lambda$TestGetFirst$0(SequenceTest.java:29)
+       org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+       [...]
+  JUnit Jupiter:DynCircularVectorITest:Vector Basics:Check starting from a NonEmpty Vector
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.sequences.generic.XDynVectorITest$VectorBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => org.opentest4j.AssertionFailedError: Size should increase by 1 after Expand ==> expected: <1> but was: <0>
+       org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+       org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+       org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+       org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:166)
+       org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:664)
+       zapsdtest.testframework.containers.base.ResizableContainerTest.TestExpandWithNumber(ResizableContainerTest.java:33)
+       zapsdtest.simpletest.apsd.classes.containers.sequences.generic.XDynVectorITest.NewNonEmptyContainer(XDynVectorITest.java:14)
+       zapsdtest.simpletest.apsd.classes.containers.sequences.generic.XDynVectorITest$VectorBasics.NonEmpty(XDynVectorITest.java:52)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       [...]
+  JUnit Jupiter:DynCircularVectorITest:Container Basics:Checking NonEmpty Container
+    MethodSource [className = 'zapsdtest.testframework.containers.ContainerBaseTest$ContainerBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => org.opentest4j.AssertionFailedError: Size should increase by 1 after Expand ==> expected: <1> but was: <0>
+       org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+       org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+       org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+       org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:166)
+       org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:664)
+       zapsdtest.testframework.containers.base.ResizableContainerTest.TestExpandWithNumber(ResizableContainerTest.java:33)
+       zapsdtest.simpletest.apsd.classes.containers.sequences.generic.XDynVectorITest.NewNonEmptyContainer(XDynVectorITest.java:14)
+       zapsdtest.testframework.containers.ContainerBaseTest$ContainerBasics.NonEmpty(ContainerBaseTest.java:125)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       [...]
+  JUnit Jupiter:CircularVectorITest:Vector Basics:Check starting from an Empty Vector
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.sequences.generic.XVectorITest$VectorBasics', methodName = 'Empty', methodParameterTypes = '']
+    => org.opentest4j.AssertionFailedError: GetFirst should throw exception when sequence is empty ==> Unexpected exception type thrown, expected: <java.lang.IndexOutOfBoundsException> but was: <java.lang.IllegalStateException>
+       org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+       org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:67)
+       org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:39)
+       org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3153)
+       zapsdtest.testframework.containers.sequences.SequenceTest.TestGetFirst(SequenceTest.java:29)
+       [...]
+     Caused by: java.lang.IllegalStateException: Sequenza vuota
+       apsd.interfaces.containers.sequences.Sequence.GetFirst(Sequence.java:22)
+       zapsdtest.testframework.containers.sequences.SequenceTest.lambda$TestGetFirst$0(SequenceTest.java:29)
+       org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+       [...]
+  JUnit Jupiter:CircularVectorITest:Vector Basics:Check starting from a NonEmpty Vector
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.sequences.generic.XVectorITest$VectorBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => org.opentest4j.AssertionFailedError: SetAt should throw exception for invalid position ==> Expected java.lang.IndexOutOfBoundsException to be thrown, but nothing was thrown.
+       org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+       org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+       org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:39)
+       org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3153)
+       zapsdtest.testframework.containers.sequences.MutableSequenceTest.TestSetAt(MutableSequenceTest.java:15)
+       zapsdtest.simpletest.apsd.classes.containers.sequences.generic.XVectorITest.NewNonEmptyContainer(XVectorITest.java:22)
+       zapsdtest.simpletest.apsd.classes.containers.sequences.generic.XVectorITest$VectorBasics.NonEmpty(XVectorITest.java:52)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       [...]
+  JUnit Jupiter:CircularVectorITest:Container Basics:Checking NonEmpty Container
+    MethodSource [className = 'zapsdtest.testframework.containers.ContainerBaseTest$ContainerBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => org.opentest4j.AssertionFailedError: SetAt should throw exception for invalid position ==> Expected java.lang.IndexOutOfBoundsException to be thrown, but nothing was thrown.
+       org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+       org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+       org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:39)
+       org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3153)
+       zapsdtest.testframework.containers.sequences.MutableSequenceTest.TestSetAt(MutableSequenceTest.java:15)
+       zapsdtest.simpletest.apsd.classes.containers.sequences.generic.XVectorITest.NewNonEmptyContainer(XVectorITest.java:22)
+       zapsdtest.testframework.containers.ContainerBaseTest$ContainerBasics.NonEmpty(ContainerBaseTest.java:125)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       [...]
+  JUnit Jupiter:VSetITest:WSet Basics:Check starting from a NonEmpty WSet
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.collections.abstractcollections.generic.WSetITest$WSetBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => java.lang.IndexOutOfBoundsException: Index out of bounds: 0; Size: 0!
+       apsd.interfaces.containers.sequences.Sequence.ExcIfOutOfBound(Sequence.java:64)
+       apsd.interfaces.containers.sequences.Vector.ShiftRight(Vector.java:49)
+       apsd.interfaces.containers.sequences.DynVector.ShiftRight(DynVector.java:45)
+       apsd.interfaces.containers.sequences.Vector.ShiftRight(Vector.java:45)
+       apsd.interfaces.containers.sequences.DynVector.InsertAt(DynVector.java:21)
+       apsd.classes.containers.collections.concretecollections.VList.InsertAt(VList.java:149)
+       apsd.interfaces.containers.collections.List.Insert(List.java:37)
+       apsd.classes.containers.collections.abstractcollections.bases.WSetBase.Insert(WSetBase.java:50)
+       zapsdtest.testframework.containers.base.InsertableContainerTest.TestInsert(InsertableContainerTest.java:13)
+       zapsdtest.simpletest.apsd.classes.containers.collections.abstractcollections.generic.WSetITest.NewNonEmptyContainer(WSetITest.java:13)
+       [...]
+  JUnit Jupiter:VSetITest:Container Basics:Checking NonEmpty Container
+    MethodSource [className = 'zapsdtest.testframework.containers.ContainerBaseTest$ContainerBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => java.lang.IndexOutOfBoundsException: Index out of bounds: 0; Size: 0!
+       apsd.interfaces.containers.sequences.Sequence.ExcIfOutOfBound(Sequence.java:64)
+       apsd.interfaces.containers.sequences.Vector.ShiftRight(Vector.java:49)
+       apsd.interfaces.containers.sequences.DynVector.ShiftRight(DynVector.java:45)
+       apsd.interfaces.containers.sequences.Vector.ShiftRight(Vector.java:45)
+       apsd.interfaces.containers.sequences.DynVector.InsertAt(DynVector.java:21)
+       apsd.classes.containers.collections.concretecollections.VList.InsertAt(VList.java:149)
+       apsd.interfaces.containers.collections.List.Insert(List.java:37)
+       apsd.classes.containers.collections.abstractcollections.bases.WSetBase.Insert(WSetBase.java:50)
+       zapsdtest.testframework.containers.base.InsertableContainerTest.TestInsert(InsertableContainerTest.java:13)
+       zapsdtest.simpletest.apsd.classes.containers.collections.abstractcollections.generic.WSetITest.NewNonEmptyContainer(WSetITest.java:13)
+       [...]
+  JUnit Jupiter:LLListITest:List Basics:Check starting from an Empty List
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.collections.concretecollections.generic.XListITest$ListBasics', methodName = 'Empty', methodParameterTypes = '']
+    => org.opentest4j.AssertionFailedError: GetFirst should throw exception when sequence is empty ==> Expected java.lang.IndexOutOfBoundsException to be thrown, but nothing was thrown.
+       org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+       org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+       org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:39)
+       org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3153)
+       zapsdtest.testframework.containers.sequences.SequenceTest.TestGetFirst(SequenceTest.java:29)
+       zapsdtest.simpletest.apsd.classes.containers.collections.concretecollections.generic.XListITest$ListBasics.Empty(XListITest.java:35)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+  JUnit Jupiter:LLListITest:List Basics:Check starting from a NonEmpty List
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.collections.concretecollections.generic.XListITest$ListBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => org.opentest4j.AssertionFailedError: GetFirst should return 5 ==> expected: <5> but was: <1>
+       org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+       org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+       org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+       org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+       org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1156)
+       zapsdtest.testframework.containers.sequences.SequenceTest.TestGetFirst(SequenceTest.java:33)
+       zapsdtest.simpletest.apsd.classes.containers.collections.concretecollections.generic.XListITest$ListBasics.NonEmpty(XListITest.java:54)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       [...]
+  JUnit Jupiter:LLOrderedSetITest:WOrderedSet Basics:Check starting from an Empty WOrderedSet
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.collections.abstractcollections.generic.WOrderedSetITest$WOrderedSetBasics', methodName = 'Empty', methodParameterTypes = '']
+    => java.lang.ClassCastException: class apsd.classes.containers.collections.concretecollections.LLSortedChain cannot be cast to class apsd.classes.containers.collections.concretecollections.VSortedChain (apsd.classes.containers.collections.concretecollections.LLSortedChain and apsd.classes.containers.collections.concretecollections.VSortedChain are in unnamed module of loader java.net.URLClassLoader @5e57643e)
+       apsd.classes.containers.collections.abstractcollections.WOrderedSet.<init>(WOrderedSet.java:20)
+       zapsdtest.simpletest.apsd.classes.containers.collections.abstractcollections.LLOrderedSetITest.NewEmptyContainer(LLOrderedSetITest.java:16)
+       zapsdtest.simpletest.apsd.classes.containers.collections.abstractcollections.generic.WOrderedSetITest$WOrderedSetBasics.Empty(WOrderedSetITest.java:31)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+  JUnit Jupiter:LLOrderedSetITest:WOrderedSet Basics:Check starting from a NonEmpty WOrderedSet
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.collections.abstractcollections.generic.WOrderedSetITest$WOrderedSetBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => java.lang.ClassCastException: class apsd.classes.containers.collections.concretecollections.LLSortedChain cannot be cast to class apsd.classes.containers.collections.concretecollections.VSortedChain (apsd.classes.containers.collections.concretecollections.LLSortedChain and apsd.classes.containers.collections.concretecollections.VSortedChain are in unnamed module of loader java.net.URLClassLoader @5e57643e)
+       apsd.classes.containers.collections.abstractcollections.WOrderedSet.<init>(WOrderedSet.java:20)
+       zapsdtest.simpletest.apsd.classes.containers.collections.abstractcollections.LLOrderedSetITest.NewEmptyContainer(LLOrderedSetITest.java:16)
+       zapsdtest.simpletest.apsd.classes.containers.collections.abstractcollections.generic.WOrderedSetITest.NewNonEmptyContainer(WOrderedSetITest.java:10)
+       zapsdtest.simpletest.apsd.classes.containers.collections.abstractcollections.generic.WOrderedSetITest$WOrderedSetBasics.NonEmpty(WOrderedSetITest.java:46)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+  JUnit Jupiter:LLOrderedSetITest:Container Basics:Checking Empty Container
+    MethodSource [className = 'zapsdtest.testframework.containers.ContainerBaseTest$ContainerBasics', methodName = 'Empty', methodParameterTypes = '']
+    => java.lang.ClassCastException: class apsd.classes.containers.collections.concretecollections.LLSortedChain cannot be cast to class apsd.classes.containers.collections.concretecollections.VSortedChain (apsd.classes.containers.collections.concretecollections.LLSortedChain and apsd.classes.containers.collections.concretecollections.VSortedChain are in unnamed module of loader java.net.URLClassLoader @5e57643e)
+       apsd.classes.containers.collections.abstractcollections.WOrderedSet.<init>(WOrderedSet.java:20)
+       zapsdtest.simpletest.apsd.classes.containers.collections.abstractcollections.LLOrderedSetITest.NewEmptyContainer(LLOrderedSetITest.java:16)
+       zapsdtest.testframework.containers.ContainerBaseTest$ContainerBasics.Empty(ContainerBaseTest.java:115)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+  JUnit Jupiter:LLOrderedSetITest:Container Basics:Checking NonEmpty Container
+    MethodSource [className = 'zapsdtest.testframework.containers.ContainerBaseTest$ContainerBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => java.lang.ClassCastException: class apsd.classes.containers.collections.concretecollections.LLSortedChain cannot be cast to class apsd.classes.containers.collections.concretecollections.VSortedChain (apsd.classes.containers.collections.concretecollections.LLSortedChain and apsd.classes.containers.collections.concretecollections.VSortedChain are in unnamed module of loader java.net.URLClassLoader @5e57643e)
+       apsd.classes.containers.collections.abstractcollections.WOrderedSet.<init>(WOrderedSet.java:20)
+       zapsdtest.simpletest.apsd.classes.containers.collections.abstractcollections.LLOrderedSetITest.NewEmptyContainer(LLOrderedSetITest.java:16)
+       zapsdtest.simpletest.apsd.classes.containers.collections.abstractcollections.generic.WOrderedSetITest.NewNonEmptyContainer(WOrderedSetITest.java:10)
+       zapsdtest.testframework.containers.ContainerBaseTest$ContainerBasics.NonEmpty(ContainerBaseTest.java:125)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+  JUnit Jupiter:LLSetITest:WSet Basics:Check starting from an Empty WSet
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.collections.abstractcollections.generic.WSetITest$WSetBasics', methodName = 'Empty', methodParameterTypes = '']
+    => java.lang.ClassCastException: class apsd.classes.containers.collections.concretecollections.LLList cannot be cast to class apsd.classes.containers.collections.concretecollections.VList (apsd.classes.containers.collections.concretecollections.LLList and apsd.classes.containers.collections.concretecollections.VList are in unnamed module of loader java.net.URLClassLoader @5e57643e)
+       apsd.classes.containers.collections.abstractcollections.WSet.<init>(WSet.java:19)
+       zapsdtest.simpletest.apsd.classes.containers.collections.abstractcollections.LLSetITest.NewEmptyContainer(LLSetITest.java:17)
+       zapsdtest.simpletest.apsd.classes.containers.collections.abstractcollections.generic.WSetITest$WSetBasics.Empty(WSetITest.java:33)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+  JUnit Jupiter:LLSetITest:WSet Basics:Check starting from a NonEmpty WSet
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.collections.abstractcollections.generic.WSetITest$WSetBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => java.lang.ClassCastException: class apsd.classes.containers.collections.concretecollections.LLList cannot be cast to class apsd.classes.containers.collections.concretecollections.VList (apsd.classes.containers.collections.concretecollections.LLList and apsd.classes.containers.collections.concretecollections.VList are in unnamed module of loader java.net.URLClassLoader @5e57643e)
+       apsd.classes.containers.collections.abstractcollections.WSet.<init>(WSet.java:19)
+       zapsdtest.simpletest.apsd.classes.containers.collections.abstractcollections.LLSetITest.NewEmptyContainer(LLSetITest.java:17)
+       zapsdtest.simpletest.apsd.classes.containers.collections.abstractcollections.generic.WSetITest.NewNonEmptyContainer(WSetITest.java:12)
+       zapsdtest.simpletest.apsd.classes.containers.collections.abstractcollections.generic.WSetITest$WSetBasics.NonEmpty(WSetITest.java:46)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+  JUnit Jupiter:LLSetITest:Container Basics:Checking Empty Container
+    MethodSource [className = 'zapsdtest.testframework.containers.ContainerBaseTest$ContainerBasics', methodName = 'Empty', methodParameterTypes = '']
+    => java.lang.ClassCastException: class apsd.classes.containers.collections.concretecollections.LLList cannot be cast to class apsd.classes.containers.collections.concretecollections.VList (apsd.classes.containers.collections.concretecollections.LLList and apsd.classes.containers.collections.concretecollections.VList are in unnamed module of loader java.net.URLClassLoader @5e57643e)
+       apsd.classes.containers.collections.abstractcollections.WSet.<init>(WSet.java:19)
+       zapsdtest.simpletest.apsd.classes.containers.collections.abstractcollections.LLSetITest.NewEmptyContainer(LLSetITest.java:17)
+       zapsdtest.testframework.containers.ContainerBaseTest$ContainerBasics.Empty(ContainerBaseTest.java:115)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+  JUnit Jupiter:LLSetITest:Container Basics:Checking NonEmpty Container
+    MethodSource [className = 'zapsdtest.testframework.containers.ContainerBaseTest$ContainerBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => java.lang.ClassCastException: class apsd.classes.containers.collections.concretecollections.LLList cannot be cast to class apsd.classes.containers.collections.concretecollections.VList (apsd.classes.containers.collections.concretecollections.LLList and apsd.classes.containers.collections.concretecollections.VList are in unnamed module of loader java.net.URLClassLoader @5e57643e)
+       apsd.classes.containers.collections.abstractcollections.WSet.<init>(WSet.java:19)
+       zapsdtest.simpletest.apsd.classes.containers.collections.abstractcollections.LLSetITest.NewEmptyContainer(LLSetITest.java:17)
+       zapsdtest.simpletest.apsd.classes.containers.collections.abstractcollections.generic.WSetITest.NewNonEmptyContainer(WSetITest.java:12)
+       zapsdtest.testframework.containers.ContainerBaseTest$ContainerBasics.NonEmpty(ContainerBaseTest.java:125)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+  JUnit Jupiter:LLSortedChainITest:SortedChain Basics:Check starting from an Empty SortedChain
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.collections.concretecollections.generic.XSortedChainITest$SortedChainBasics', methodName = 'Empty', methodParameterTypes = '']
+    => org.opentest4j.AssertionFailedError: GetFirst should throw exception when sequence is empty ==> Expected java.lang.IndexOutOfBoundsException to be thrown, but nothing was thrown.
+       org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+       org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+       org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:39)
+       org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3153)
+       zapsdtest.testframework.containers.sequences.SequenceTest.TestGetFirst(SequenceTest.java:29)
+       zapsdtest.simpletest.apsd.classes.containers.collections.concretecollections.generic.XSortedChainITest$SortedChainBasics.Empty(XSortedChainITest.java:35)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+  JUnit Jupiter:VectorITest:Vector Basics:Check starting from an Empty Vector
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.sequences.generic.XVectorITest$VectorBasics', methodName = 'Empty', methodParameterTypes = '']
+    => org.opentest4j.AssertionFailedError: GetFirst should throw exception when sequence is empty ==> Unexpected exception type thrown, expected: <java.lang.IndexOutOfBoundsException> but was: <java.lang.IllegalStateException>
+       org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+       org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:67)
+       org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:39)
+       org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3153)
+       zapsdtest.testframework.containers.sequences.SequenceTest.TestGetFirst(SequenceTest.java:29)
+       [...]
+     Caused by: java.lang.IllegalStateException: Sequenza vuota
+       apsd.interfaces.containers.sequences.Sequence.GetFirst(Sequence.java:22)
+       zapsdtest.testframework.containers.sequences.SequenceTest.lambda$TestGetFirst$0(SequenceTest.java:29)
+       org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+       [...]
+  JUnit Jupiter:VectorITest:Vector Basics:Check starting from a NonEmpty Vector
+    MethodSource [className = 'zapsdtest.simpletest.apsd.classes.containers.sequences.generic.XVectorITest$VectorBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => java.lang.IndexOutOfBoundsException: Indice non valido : 0
+       apsd.classes.containers.sequences.abstractbases.LinearVectorBase.SetAt(LinearVectorBase.java:44)
+       apsd.interfaces.containers.sequences.MutableSequence.SetFirst(MutableSequence.java:39)
+       zapsdtest.testframework.containers.sequences.MutableSequenceTest.TestSetFirst(MutableSequenceTest.java:49)
+       zapsdtest.simpletest.apsd.classes.containers.sequences.generic.XVectorITest.NewNonEmptyContainer(XVectorITest.java:15)
+       zapsdtest.simpletest.apsd.classes.containers.sequences.generic.XVectorITest$VectorBasics.NonEmpty(XVectorITest.java:52)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+  JUnit Jupiter:VectorITest:Container Basics:Checking NonEmpty Container
+    MethodSource [className = 'zapsdtest.testframework.containers.ContainerBaseTest$ContainerBasics', methodName = 'NonEmpty', methodParameterTypes = '']
+    => java.lang.IndexOutOfBoundsException: Indice non valido : 0
+       apsd.classes.containers.sequences.abstractbases.LinearVectorBase.SetAt(LinearVectorBase.java:44)
+       apsd.interfaces.containers.sequences.MutableSequence.SetFirst(MutableSequence.java:39)
+       zapsdtest.testframework.containers.sequences.MutableSequenceTest.TestSetFirst(MutableSequenceTest.java:49)
+       zapsdtest.simpletest.apsd.classes.containers.sequences.generic.XVectorITest.NewNonEmptyContainer(XVectorITest.java:15)
+       zapsdtest.testframework.containers.ContainerBaseTest$ContainerBasics.NonEmpty(ContainerBaseTest.java:125)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
+Test run finished after 261 ms
+[        56 containers found      ]
+[         0 containers skipped    ]
+[        56 containers started    ]
+[         0 containers aborted    ]
+[        56 containers successful ]
+[         0 containers failed     ]
+[        82 tests found           ]
+[         0 tests skipped         ]
+[        82 tests started         ]
+[         0 tests aborted         ]
+[        39 tests successful      ]
+[        43 tests failed          ]
+
+make: *** [makefile:37: runtest] Errore 1
