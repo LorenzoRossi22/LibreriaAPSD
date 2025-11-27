@@ -38,7 +38,6 @@ public interface ReallocableContainer extends ClearableContainer, Reallocable{ /
 
   default void Shrink() {
     long cap = Capacity().ToLong();
-    // Divide per il fattore (es. cap / 2.0)
     long newCap = (long)(cap / SHRINK_FACTOR);
     
     Realloc(Natural.Of(newCap));

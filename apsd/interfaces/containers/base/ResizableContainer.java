@@ -16,11 +16,8 @@ public interface ResizableContainer extends ReallocableContainer{ // Must extend
   void Expand(Natural newCapacity);
 
   default void Reduce() {
-    long size = Size().ToLong();
-    long cap  = Capacity().ToLong();
-
-    if (cap > size) {
-        Realloc(new Natural(size));
+    if ((long)(THRESHOLD_FACTOR * Size().ToLong()) <= Capacity().ToLong()) {
+        Shrink();
     }
   }
   
@@ -29,24 +26,32 @@ public interface ResizableContainer extends ReallocableContainer{ // Must extend
   /* ************************************************************************ */
   /* Override specific member functions from Container                        */
   /* ************************************************************************ */
-
-  default Natural Size(){
-    return Capacity();
-  }
+  @Override
+  Natural Size();
 
   /* ************************************************************************ */
   /* Override specific member functions from ReallocableContainer             */
   /* ************************************************************************ */
-
-  default void Grow(Natural newCapacity) {
-    if (newCapacity.ToLong() > Capacity().ToLong()) {
-        Realloc(newCapacity);
-    }
+  @Override
+  default void Grow(Natural increment) {
+    if (increment == null) return;
+    long newCap = Capacity().ToLong() + increment.ToLong();
+    Realloc(Natural.Of(newCap));
   }
 
   @Override
   default void Shrink() {
-     if ((long) (THRESHOLD_FACTOR * SHRINK_FACTOR * Size().ToLong()) <= Capacity().ToLong()) ReallocableContainer.super.Shrink();
+    long cap = Capacity().ToLong();
+    long size = Size().ToLong();
+    
+    // Calcola la nuova capacità teorica
+    long newCap = (long)(cap / SHRINK_FACTOR);
+    
+    //Non scende mai sotto la dimensione logica attuale
+    if (newCap < size) {
+        newCap = size;
+    }
+    
+    Realloc(Natural.Of(newCap));
   }
-
 }
