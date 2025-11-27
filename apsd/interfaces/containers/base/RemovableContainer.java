@@ -1,5 +1,7 @@
 package apsd.interfaces.containers.base;
 
+import apsd.classes.utilities.Box;
+
 /** Interface: Container con supporto alla rimozione di un dato. */
 public interface RemovableContainer<Data> extends Container{ // Must extend Container
 
@@ -14,16 +16,16 @@ public interface RemovableContainer<Data> extends Container{ // Must extend Cont
     return !cont;
   }
 
-  default boolean RemoveSome(TraversableContainer<Data> TravC){
+  default boolean RemoveSome(TraversableContainer<Data> TravC) {
+    if (TravC == null) return false;
+    Box<Boolean> changed = new Box<>(false);
     
-    boolean cont = TravC.TraverseForward(elem -> {
+    TravC.TraverseForward(elem -> {
         if (Remove(elem)) {
-            return true;   
+          changed.Set(true);
         }
-        return false;      
+        return false;
     });
-
-    return cont;
+    return changed.Get();
   }
-
 }

@@ -9,50 +9,48 @@ public interface IterableContainer<Data> extends TraversableContainer<Data>{ // 
 
   ForwardIterator<Data> FIterator();
   BackwardIterator<Data> BIterator();
+    //*******************************VERIFICA SE DUE STRUTTURE DATI SONO UGUALI TRA LORO********************************//
+    default boolean IsEqual(IterableContainer<Data> other) {
+        if (other == null) return false;
+        if( this.Size().ToLong() != other.Size().ToLong()) return false;
+        // Otteniamo i due iteratori
+        ForwardIterator<Data> i1 = this.FIterator();
+        ForwardIterator<Data> i2 = other.FIterator();
 
-  default boolean IsEqual(IterableContainer<Data> IterableC){
-    if (IterableC == null) return false;
-
-      if (!this.Size().equals(IterableC.Size()))
-          return false;
-
-      ForwardIterator<Data> it1 = this.FIterator();
-      ForwardIterator<Data> it2 = IterableC.FIterator();
-
-      while (it1.IsValid() && it2.IsValid()) {
-
-          Data a = it1.DataNNext();
-          Data b = it2.DataNNext();
-
-          if (a == null) {
-              if (b != null) return false;
-          } else {
-              if (!a.equals(b)) return false;
-          }
-      }
-
-      return true;
-  }
+        // Finchè ENTRAMBI sono validi (non siamo arrivati alla fine)
+        while (i1.IsValid() && i2.IsValid()) {
+            
+            // Confrontiamo elemento per elemento avanzando entrambi
+            Data d1 = i1.DataNNext();
+            Data d2 = i2.DataNNext();
+            
+            if (!d1.equals(d2)) {
+                return false; // Diversi!
+            }
+        }
+        
+        return true;
+    }
 
   /* ************************************************************************ */
   /* Override specific member functions from TraversableContainer             */
   /* ************************************************************************ */
-
+  //*******************************ATTRAVERSA IN AVANTI LA STRUTTURA DATI E APPLICA IL PREDICATO SU OGNI ELEMENTO********************************//
   @Override
   default boolean TraverseForward(Predicate<Data> pred) {
-      if (pred == null) return false;
+    if (pred == null) return false;
 
-      ForwardIterator<Data> it = FIterator();
+    ForwardIterator<Data> it = FIterator();
 
-      while (it.IsValid()) {
-          if (pred.Apply(it.DataNNext())) {
-              return true;
-          }
+    while (it.IsValid()) {
+      if (pred.Apply(it.DataNNext())) {
+        return true;
       }
+    }
 
-      return false;
+    return false;
   }
-
+  //*******************************ATTRAVERSA IN INDIETRO LA STRUTTURA DATI E APPLICA IL PREDICATO SU OGNI ELEMENTO********************************//
   @Override
   default boolean TraverseBackward(Predicate<Data> pred) {
       if (pred == null) return false;
