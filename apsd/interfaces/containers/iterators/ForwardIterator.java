@@ -13,16 +13,11 @@ public interface ForwardIterator<Data> extends Iterator<Data>{ // Must extend It
   }
 
   default void Next(Natural nat){
-    if (nat == null) return;
-
-    long steps = nat.ToLong();
-    for (long i = 0; i < steps && IsValid(); i = i + 1) {
-        DataNNext();
-    }
+    Next(nat.ToLong());
   }
 
   default void Next(long steps) {
-    Next(Natural.Of(steps));
+    for(;steps>0; --steps, Next()){};
   }
   Data DataNNext();
 

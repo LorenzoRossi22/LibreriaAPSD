@@ -8,24 +8,14 @@ public interface RemovableContainer<Data> extends Container{ // Must extend Cont
   boolean Remove(Data dat);
 
   default boolean RemoveAll(TraversableContainer<Data> TravC){
-    
-    boolean cont = TravC.TraverseForward(elem -> {
-        return !Remove(elem);   
-    });
-
-    return !cont;
+    final Box<Boolean> changed = new Box<>(true);
+    if(TravC != null){ TravC.TraverseForward(dat -> {changed.Set(changed.Get() && Remove(dat)); return false;}); }
+    return changed.Get();
   }
 
   default boolean RemoveSome(TraversableContainer<Data> TravC) {
-    if (TravC == null) return false;
-    Box<Boolean> changed = new Box<>(false);
-    
-    TravC.TraverseForward(elem -> {
-        if (Remove(elem)) {
-          changed.Set(true);
-        }
-        return false;
-    });
+    final Box<Boolean> changed = new Box<>(false);
+    if(TravC != null){ TravC.TraverseForward(dat -> {changed.Set(changed.Get() || Remove(dat)); return false;}); }
     return changed.Get();
   }
 }

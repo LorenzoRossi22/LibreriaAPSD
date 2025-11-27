@@ -30,14 +30,9 @@ public interface TraversableContainer<Data> extends MembershipContainer<Data>{ /
                               /*restituisce la dimensione della struttura dati*/
   @Override
   default Natural Size() {
-    final MutableNatural i = new MutableNatural(0L);
-
-    TraverseForward(dat -> {
-        i.Increment();
-        return false;
-    });
-
-    return i.ToNatural();
+    final MutableNatural size = new MutableNatural(0);
+    TraverseForward(dat -> { size.Increment(); return false; });
+    return Natural.Of(size);
   }
 
   /* ************************************************************************ */
@@ -47,11 +42,6 @@ public interface TraversableContainer<Data> extends MembershipContainer<Data>{ /
                               /*verifica che un elemento sia presente o meno nella struttura dati*/
   @Override
   default boolean Exists(Data dat) {
-    if (dat == null) return false;
-
-    return TraverseForward(elem -> {
-        if (dat.equals(elem)) return true;         
-        return false;      
-    });
+    return TraverseForward(val -> val == null && dat == null || val != null && dat != null && val.equals(dat));
   }
 }

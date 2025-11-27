@@ -13,16 +13,11 @@ public interface BackwardIterator<Data> extends Iterator<Data>{ // Must extend I
   }
 
   default void Prev(Natural nat){
-    if (nat == null) return;
-
-    long steps = nat.ToLong();
-    for (long i = 0; i < steps && IsValid(); i = i + 1) {
-        DataNPrev();
-    }
+    Prev(nat.ToLong());
   }
 
   default void Prev(long steps) {
-    Prev(Natural.Of(steps));
+    for(;steps>0; --steps, Prev()){};
   }
   Data DataNPrev();
 
