@@ -24,7 +24,7 @@ public class WQueue<Data> implements Queue<Data>{ // Must implement Queue
   public WQueue(TraversableContainer<Data> con){
     this.lst = new VList<>();
     for(long i = 0; i < con.Size().ToLong(); i++){
-      lst.InsertAt(Natural.Of(lst.Size().ToLong()), con.GetAt(Natural.Of(i)));
+      lst.InsertAt(con.GetAt(Natural.Of(i)), Natural.Of(lst.Size().ToLong()));
     }
   }
 
@@ -32,7 +32,7 @@ public class WQueue<Data> implements Queue<Data>{ // Must implement Queue
     if (lst == null) throw new IllegalArgumentException("La lista non può essere nulla");
     this.lst = lst;
     for(long i = 0; i < con.Size().ToLong(); i++){
-      lst.InsertAt(Natural.Of(lst.Size().ToLong()), con.GetAt(Natural.Of(i)));
+      lst.InsertAt(con.GetAt(Natural.Of(i)), Natural.Of(lst.Size().ToLong()));
     }
   }
 
@@ -130,6 +130,6 @@ public class WQueue<Data> implements Queue<Data>{ // Must implement Queue
 
   public void Enqueue(Data dat){
     long i = lst.Size().ToLong();
-    lst.InsertAt(Natural.Of(i), dat);
+    lst.InsertAt(dat, Natural.Of(i));
   }
 }

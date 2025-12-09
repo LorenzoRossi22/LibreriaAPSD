@@ -72,7 +72,7 @@ public class VSortedChain<Data extends Comparable<Data>> extends VChainBase<Data
         pos++;
     }
 
-    vec.InsertAt(Natural.Of(pos), dat);
+    vec.InsertAt(dat, Natural.Of(pos));
     return true;
   }
 
@@ -93,7 +93,7 @@ public class VSortedChain<Data extends Comparable<Data>> extends VChainBase<Data
         pos++;
     }
 
-    vec.InsertAt(Natural.Of(pos), dat);
+    vec.InsertAt(dat, Natural.Of(pos));
     return true;
   }
 

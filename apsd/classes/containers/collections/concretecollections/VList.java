@@ -50,7 +50,7 @@ public class VList<Data> extends VChainBase<Data> implements List<Data>{ // Must
   }
 
   public void InsertAt(Natural nat, Data dat) {
-    vec.InsertAt(nat, dat);
+    vec.InsertAt(dat, nat);
   }
 
   public List<Data> New() {
@@ -146,6 +146,6 @@ public class VList<Data> extends VChainBase<Data> implements List<Data>{ // Must
   /* ************************************************************************ */
 
   public void InsertAt(Data dat, Natural nat){
-    vec.InsertAt(nat, dat);
+    vec.InsertAt(dat, nat);
   }
 }

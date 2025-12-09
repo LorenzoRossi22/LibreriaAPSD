@@ -1,1 +1,0 @@
-chiedere cosa dovrebbe fare InsertSome dell'interfaccia InsertableContainer.

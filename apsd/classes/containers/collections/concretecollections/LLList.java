@@ -65,7 +65,7 @@ public class LLList<Data> extends LLChainBase<Data> implements List<Data>{ // Mu
     return result;
   }
 
-  public void InsertAt(Natural nat, Data dat) {
+  public void InsertAt(Data dat, Natural nat) {
     if (nat == null || dat == null) return;
     long index = nat.ToLong();
     if (index <= 0) {
