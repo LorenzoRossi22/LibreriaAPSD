@@ -32,12 +32,6 @@ public interface ResizableContainer extends ReallocableContainer{ // Must extend
   /* ************************************************************************ */
   /* Override specific member functions from ReallocableContainer             */
   /* ************************************************************************ */
-  @Override
-  default void Grow(Natural increment) {
-    if (increment == null) return;
-    long newCap = Capacity().ToLong() + increment.ToLong();
-    Realloc(Natural.Of(newCap));
-  }
 
   @Override
   default void Shrink() {
@@ -53,5 +47,11 @@ public interface ResizableContainer extends ReallocableContainer{ // Must extend
     }
     
     Realloc(Natural.Of(newCap));
+  }
+
+  @Override
+  default void Grow(Natural dim){
+    if(Capacity().ToLong() == Integer.MAX_VALUE) {throw new ArithmeticException("Overflow: capacity cannot overcome");}
+    if(Size().ToLong() + dim.ToLong() >= Capacity().ToLong()) ReallocableContainer.super.Grow(dim);
   }
 }
