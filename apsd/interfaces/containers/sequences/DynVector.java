@@ -9,18 +9,15 @@ public interface DynVector<Data> extends ResizableContainer,RemovableAtSequence<
   /* Override specific member functions from InsertableAtSequence             */
   /* ************************************************************************ */
 
-default void InsertAt(Data dat, Natural nat){
+  default void InsertAt(Natural nat, Data dat){
+    if (nat == null) throw new IndexOutOfBoundsException("Indice nullo");
     long idx = nat.ToLong();
     long size = Size().ToLong();
-
-    if (idx < 0 || idx > size) {
-        throw new IndexOutOfBoundsException("Index: " + idx + ", Size: " + size);
-    }
-
+    if (idx < 0 || idx > size) throw new IndexOutOfBoundsException("Indice non valido");
     if (size >= Capacity().ToLong()) Grow();
     ShiftRight(Natural.Of(idx));
     SetAt(dat, Natural.Of(idx));
-}
+  }
 
   /* ************************************************************************ */
   /* Override specific member functions from RemovableAtSequence              */

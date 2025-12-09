@@ -12,26 +12,17 @@ public interface ReallocableContainer extends ClearableContainer, Reallocable{ /
   Natural Capacity();
 
   default void Grow() {
-    Grow(Natural.ZERO);
+    long newCap = (long)(Capacity().ToLong() * GROW_FACTOR);
+    Realloc(new Natural(newCap));
   }
 
-  default void Grow(Natural increment) {
-    if (increment == null) {
-        return;
-    }
-    
-    long cap = Capacity().ToLong();
-    long inc = increment.ToLong();
-    long newCap = (long)((cap + inc) * GROW_FACTOR);
-    
-    Realloc(Natural.Of(newCap));
+  default void Grow(Natural newCapacity) {
+    Realloc(newCapacity);
   }
 
   default void Shrink() {
-    long cap = Capacity().ToLong();
-    long newCap = (long)(cap / SHRINK_FACTOR);
-    
-    Realloc(Natural.Of(newCap));
+    long newCap = (long)(Capacity().ToLong() / SHRINK_FACTOR);
+    Realloc(new Natural(newCap));
   }
 
   /* ************************************************************************ */
@@ -47,7 +38,7 @@ public interface ReallocableContainer extends ClearableContainer, Reallocable{ /
   /* ************************************************************************ */
 
   default void Clear(){
-    Realloc(Natural.ZERO);
+    Realloc(new Natural(0L));
   }
 
 }

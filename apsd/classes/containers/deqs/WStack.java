@@ -22,15 +22,16 @@ public class WStack<Data> implements Stack<Data>{ // Must implement Stack
 
   public WStack(TraversableContainer<Data> con){
     lst = new VList<>();
-    for(long i = 0; i < con.Size().ToLong(); i++){
-      lst.InsertAt(con.GetAt(Natural.Of(i)), Natural.Of(i));
-    }
+    con.TraverseForward(elem -> {
+        lst.InsertAt(lst.Size(), elem);
+        return true;
+    });
   }
 
   public WStack(List<Data> lst, TraversableContainer<Data> con){
     this.lst = lst;
     for(long i = 0; i < con.Size().ToLong(); i++){
-      lst.InsertAt(con.GetAt(Natural.Of(i)), Natural.Of(i));
+      lst.InsertAt(Natural.Of(i), con.GetAt(Natural.Of(i)));
     }
   }
 
@@ -107,8 +108,7 @@ public class WStack<Data> implements Stack<Data>{ // Must implement Stack
   }
 
   public void Pop(){
-    if (lst.Size().ToLong() == 0) throw new RuntimeException("Stack vuoto");
-    lst.RemoveAt(Natural.Of(lst.Size().ToLong() - 1));
+    if (lst.Size().ToLong() != 0) lst.RemoveAt(Natural.Of(lst.Size().ToLong() - 1));
   }
 
   public Data TopNPop(){
@@ -118,7 +118,7 @@ public class WStack<Data> implements Stack<Data>{ // Must implement Stack
   }
 
   public void SwapTop(Data dat){
-    if (lst.Size().ToLong() == 0) throw new RuntimeException("Stack vuoto");
+    if (lst.Size().ToLong() == 0) throw new IndexOutOfBoundsException("Stack vuoto");
     lst.SetAt(dat, Natural.Of(lst.Size().ToLong() - 1));
   }
 
@@ -131,7 +131,7 @@ public class WStack<Data> implements Stack<Data>{ // Must implement Stack
   }
 
   public void Push(Data dat){
-    lst.InsertAt(dat, lst.Size());
+    lst.InsertAt(lst.Size(), dat);
   }
 
 }

@@ -13,11 +13,18 @@ public class WOrderedSet<Data extends Comparable<Data>> extends WOrderedSetBase<
 
   public WOrderedSet(){
     super();
+    ChainAlloc();
   }
 
   public WOrderedSet(Chain<Data> chn){
     super();
-    if (chn != null) this.chn = (VSortedChain<Data>) chn;
+    ChainAlloc();
+    if (chn != null) {
+      chn.TraverseForward(x -> {
+          this.Insert(x);
+          return true;
+      });
+    }
   }
 
   public WOrderedSet(TraversableContainer<Data> con){
@@ -66,5 +73,12 @@ public class WOrderedSet<Data extends Comparable<Data>> extends WOrderedSetBase<
 
   protected WSetBase<Data, VSortedChain<Data>> New() {
     return new WOrderedSet<>();
+  }
+
+  @Override
+  public void Clear() {
+    if (chn != null) {
+      chn.Clear();
+    }
   }
 }

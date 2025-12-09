@@ -19,22 +19,14 @@ public interface Sequence<Data> extends IterableContainer<Data>{ // Must extend 
   }
 
   default Data GetFirst(){
-    if (IsEmpty()) throw new IllegalStateException("Sequenza vuota");
-    ForwardIterator<Data> iterator = FIterator();
-    return iterator.DataNNext();
+    if (Size().ToLong() == 0) throw new IndexOutOfBoundsException("Sequence vuota");
+    return GetAt(Natural.Of(0));
   }
 
   default Data GetLast(){
-    if (IsEmpty()) throw new IllegalStateException("Sequenza vuota");
-
-    ForwardIterator<Data> iterator = FIterator();
-    Data dat = null;
-
-    while (iterator.IsValid()) {
-      dat = iterator.DataNNext();
-    }
-
-    return dat;
+    long size = Size().ToLong();
+    if (size == 0) throw new IndexOutOfBoundsException("Sequence vuota");
+    return GetAt(Natural.Of(size - 1));
   }
 
   default Natural Search(Data dat){
@@ -59,9 +51,9 @@ public interface Sequence<Data> extends IterableContainer<Data>{ // Must extend 
   }
 
   default long ExcIfOutOfBound(Natural num) {
-    if (num == null) throw new NullPointerException("Natural number cannot be null!");
+    if (num == null) throw new NullPointerException("Un numero naturale non può essere vuoto");
     long idx = num.ToLong();
-    if (idx >= Size().ToLong()) throw new IndexOutOfBoundsException("Index out of bounds: " + idx + "; Size: " + Size() + "!");
+    if (idx >= Size().ToLong()) throw new IndexOutOfBoundsException("Indice non valido");
     return idx;
   }
 

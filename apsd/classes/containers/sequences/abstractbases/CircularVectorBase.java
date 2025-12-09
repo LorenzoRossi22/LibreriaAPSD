@@ -12,6 +12,10 @@ abstract public class CircularVectorBase<Data> extends VectorBase<Data>{ // Must
   }
 
   protected int realIndex(long logicalIndex) {
+    if (arr == null || arr.length == 0) throw new IndexOutOfBoundsException("Indice non valido : " + logicalIndex);
+
+    if (logicalIndex < 0 || logicalIndex >= arr.length) throw new IndexOutOfBoundsException("Indice non valido : " + logicalIndex);
+
     return (int)((start + logicalIndex) % arr.length);
   }
   
@@ -59,7 +63,11 @@ abstract public class CircularVectorBase<Data> extends VectorBase<Data>{ // Must
   /* ************************************************************************ */
 
   public Data GetAt(Natural nat){
-    int index = (int)nat.ToLong();
+    int index = (int) nat.ToLong();
+
+    if (index < 0 || index >= arr.length) throw new IndexOutOfBoundsException("Indice non valido : " + index);
+    if (arr == null || arr.length == 0) throw new IndexOutOfBoundsException("Indice non valido : " + index);
+    
     int real = realIndex(index);
     return arr[real];
   }
@@ -69,7 +77,11 @@ abstract public class CircularVectorBase<Data> extends VectorBase<Data>{ // Must
   /* ************************************************************************ */
 
   public void SetAt(Data dat, Natural nat){
-    int index = (int)nat.ToLong();
+    int index = (int) nat.ToLong();
+
+    if (index < 0 || index >= arr.length) throw new IndexOutOfBoundsException("Indice non valido : " + index);
+    if (arr == null || arr.length == 0) throw new IndexOutOfBoundsException("Indice non valido : " + index);
+
     int real = realIndex(index);
     arr[real] = dat;
   }

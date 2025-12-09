@@ -8,7 +8,7 @@ import apsd.interfaces.containers.collections.SortedChain;
 import apsd.classes.containers.sequences.DynVector;
 
 /** Object: Concrete set implementation via (dynamic circular) vector. */
-public class VSortedChain<Data extends Comparable<? super Data>> extends VChainBase<Data> implements SortedChain<Data>{ // Must extend VChainBase and implements SortedChain
+public class VSortedChain<Data extends Comparable<Data>> extends VChainBase<Data> implements SortedChain<Data>{ // Must extend VChainBase and implements SortedChain
 
   public VSortedChain(){
     super(new DynVector<>());
@@ -25,7 +25,7 @@ public class VSortedChain<Data extends Comparable<? super Data>> extends VChainB
     super(new DynVector<>());
     con.TraverseForward(elem -> {
         Insert(elem);
-        return false;
+        return true;
     });
   }
 
@@ -48,6 +48,7 @@ public class VSortedChain<Data extends Comparable<? super Data>> extends VChainB
   }
 
   public boolean Apply(Data dat) {
+    if(dat == null) throw new NullPointerException();
     for (long i = 0; i < vec.Size().ToLong(); i++) {
       if (vec.GetAt(Natural.Of(i)).equals(dat)) return true;
     }
@@ -63,6 +64,7 @@ public class VSortedChain<Data extends Comparable<? super Data>> extends VChainB
   /* ************************************************************************ */
 
   public boolean Insert(Data dat){
+    if(dat == null) throw new NullPointerException();
     long n = vec.Size().ToLong();
 
     long pos = 0;
@@ -70,7 +72,7 @@ public class VSortedChain<Data extends Comparable<? super Data>> extends VChainB
         pos++;
     }
 
-    vec.InsertAt(dat, Natural.Of(pos));
+    vec.InsertAt(Natural.Of(pos), dat);
     return true;
   }
 
@@ -79,6 +81,7 @@ public class VSortedChain<Data extends Comparable<? super Data>> extends VChainB
   /* ************************************************************************ */
 
   public boolean InsertIfAbsent(Data dat){
+    if(dat == null) throw new NullPointerException();
     long n = vec.Size().ToLong();
 
     long pos = 0;
@@ -90,11 +93,12 @@ public class VSortedChain<Data extends Comparable<? super Data>> extends VChainB
         pos++;
     }
 
-    vec.InsertAt(dat, Natural.Of(pos));
+    vec.InsertAt(Natural.Of(pos), dat);
     return true;
   }
 
   public void RemoveOccurrences(Data dat){
+    if(dat == null) throw new NullPointerException();
     long i = 0;
     while (i < vec.Size().ToLong()) {
       if (vec.GetAt(Natural.Of(i)).equals(dat)) {

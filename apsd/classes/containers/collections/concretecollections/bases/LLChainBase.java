@@ -176,7 +176,7 @@ abstract public class LLChainBase<Data> implements Chain<Data>{ // Must implemen
         }
 
         public void Reset() {
-            cur = arr.length - 1;
+            cur = filled - 1;
         }
 
         public Data GetCurrent() {
@@ -196,138 +196,82 @@ abstract public class LLChainBase<Data> implements Chain<Data>{ // Must implemen
   /* ************************************************************************ */
 
   public Sequence SubSequence(Natural start, Natural end){
-    long s = start.ToLong();
-    long e = end.ToLong();
-    long sz = size.ToLong();
-
-    if (s < 0) s = 0;
-    if (e > sz) e = sz;
-
+    long s = Math.max(0, start.ToLong());
+    long e = Math.min(size.ToLong(), end.ToLong());
     if (s > e) {
-        long t = s;
+        long tmp = s;
         s = e;
-        e = t;
+        e = tmp;
     }
 
     int len = (int)(e - s);
-
-    Data[] tmp = (Data[]) new Object[len];
+    @SuppressWarnings("unchecked")
+    Data[] tmpArr = (Data[]) new Object[len];
 
     long i = 0;
-    MutableForwardIterator<Box<LLNode<Data>>> it = FRefIterator();
-    while (i < s && it.IsValid()) {
-        it.DataNNext();
-        i = i + 1;
-    }
-
     int j = 0;
-    while (j < len && it.IsValid()) {
+    MutableForwardIterator<Box<LLNode<Data>>> it = FRefIterator();
+    while (it.IsValid() && i < s) {
+        it.DataNNext();
+        i++;
+    }
+    while (it.IsValid() && j < len) {
         Box<LLNode<Data>> b = it.DataNNext();
-        if (b != null) {
-            LLNode<Data> node = b.Get();
-            if (node != null) {
-                tmp[j] = node.Get();
-            } else {
-                tmp[j] = null;
-            }
-        } else {
-            tmp[j] = null;
-        }
-        j = j + 1;
+        tmpArr[j++] = (b != null && b.Get() != null) ? b.Get().Get() : null;
     }
 
     return new Sequence() {
+        public Natural Size() {
+            return Natural.Of(tmpArr.length);
+        }
 
-      public Natural Size() {
-          return Natural.Of(tmp.length);
-      }
+        public Object GetAt(Natural pos) {
+            int p = (int) pos.ToLong();
+            return (p >= 0 && p < tmpArr.length) ? tmpArr[p] : null;
+        }
 
-      public Object GetAt(Natural pos) {
-          int p = (int) pos.ToLong();
-          if (p < 0) return null;
-          if (p >= tmp.length) return null;
-          return tmp[p];
-      }
+        public ForwardIterator FIterator() {
+            return new ForwardIterator() {
+                int index = 0;
+                public boolean IsValid() { return index >= 0 && index < tmpArr.length; }
+                public void Reset() { index = 0; }
+                public Object GetCurrent() { return IsValid() ? tmpArr[index] : null; }
+                public Object DataNNext() { return IsValid() ? tmpArr[index++] : null; }
+            };
+        }
 
-      public ForwardIterator FIterator() {
-          return new ForwardIterator() {
-              int index = 0;
+        public BackwardIterator BIterator() {
+            return new BackwardIterator() {
+                int index = tmpArr.length - 1;
+                public boolean IsValid() { return index >= 0 && index < tmpArr.length; }
+                public void Reset() { index = tmpArr.length - 1; }
+                public Object GetCurrent() { return IsValid() ? tmpArr[index] : null; }
+                public Object DataNPrev() { return IsValid() ? tmpArr[index--] : null; }
+            };
+        }
 
-              public boolean IsValid() {
-                  return index >= 0 && index < tmp.length;
-              }
+        public boolean Apply(Object dat) {
+            for (Data d : tmpArr) {
+                if ((d == null && dat == null) || (d != null && d.equals(dat))) return true;
+            }
+            return false;
+        }
 
-              public void Reset() {
-                  index = 0;
-              }
+        public Object Apply(Object dat, Object acc) {
+            Object result = acc;
+            for (Data val : tmpArr) {
+                if (result instanceof Number && val instanceof Number) {
+                    result = ((Number) result).doubleValue() + ((Number) val).doubleValue();
+                } else {
+                    result = String.valueOf(result) + String.valueOf(val);
+                }
+            }
+            return result;
+        }
 
-              public Object GetCurrent() {
-                  if (!IsValid()) return null;
-                  return tmp[index];
-              }
-
-              public Object DataNNext() {
-                  if (!IsValid()) return null;
-                  return tmp[index++];
-              }
-          };
-      }
-
-      public BackwardIterator BIterator() {
-          return new BackwardIterator() {
-              int index = tmp.length - 1;
-
-              public boolean IsValid() {
-                  return index >= 0 && index < tmp.length;
-              }
-
-              public void Reset() {
-                  index = tmp.length - 1;
-              }
-
-              public Object GetCurrent() {
-                  if (!IsValid()) return null;
-                  return tmp[index];
-              }
-
-              public Object DataNPrev() {
-                  if (!IsValid()) return null;
-                  return tmp[index--];
-              }
-          };
-      }
-
-      public boolean Apply(Object dat) {
-          for (int k = 0; k < tmp.length; k++) {
-              if (tmp[k] == null) {
-                  if (dat == null) return true;
-              } else {
-                  if (tmp[k].equals(dat)) return true;
-              }
-          }
-          return false;
-      }
-
-      public Object Apply(Object dat, Object acc) {
-          Object result = acc;
-
-          for (int k = 0; k < tmp.length; k++) {
-              Data val = tmp[k];
-
-              if (result instanceof Number && val instanceof Number) {
-                  double sum = ((Number) result).doubleValue() +
-                                ((Number) val).doubleValue();
-                  result = sum;
-              } else {
-                  result = String.valueOf(result) + String.valueOf(val);
-              }
-          }
-          return result;
-      }
-
-      public Sequence SubSequence(Natural start2, Natural end2) {
-          return this.SubSequence(start2, end2);
-      }
+        public Sequence SubSequence(Natural start, Natural end) {
+          return LLChainBase.this.SubSequence( Natural.Of(Math.max(0, start.ToLong())), Natural.Of(Math.min(tmpArr.length, end.ToLong())) );
+        }
     };
   }
 

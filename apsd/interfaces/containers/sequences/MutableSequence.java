@@ -12,11 +12,14 @@ public interface MutableSequence<Data> extends Sequence<Data>,MutableIterableCon
 
     MutableForwardIterator<Data> iterator = FIterator();
 
-    for (long i = 0; i < pos && iterator.IsValid(); ++i) {
-        iterator.Next();   
+    for (long i = 0; i < pos; ++i) {
+        if (!iterator.IsValid())  throw new IndexOutOfBoundsException();
+        iterator.Next();
     }
 
-    if (iterator.IsValid()) iterator.SetCurrent(dat);
+    if (!iterator.IsValid())  throw new IndexOutOfBoundsException();
+
+    iterator.SetCurrent(dat);
   }
 
   default Data GetNSetAt(Data dat, Natural nat){
@@ -24,10 +27,13 @@ public interface MutableSequence<Data> extends Sequence<Data>,MutableIterableCon
 
     MutableForwardIterator<Data> iterator = FIterator();
 
-    for (long i = 0; i < pos && iterator.IsValid(); ++i)
-      iterator.Next();
+    for (long i = 0; i < pos; ++i) {
+        if (!iterator.IsValid())
+            throw new IndexOutOfBoundsException();
+        iterator.Next();
+    }
 
-    if (!iterator.IsValid()) return null;
+    if (!iterator.IsValid())  throw new IndexOutOfBoundsException();
 
     Data old = iterator.GetCurrent();
     iterator.SetCurrent(dat);

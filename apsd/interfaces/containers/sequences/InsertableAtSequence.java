@@ -5,13 +5,13 @@ import apsd.classes.utilities.Natural;
 /** Interface: Sequence con supporto all'inserimento di un dato tramite posizione. */
 public interface InsertableAtSequence<Data> extends Sequence<Data>{ // Must extend Sequence
 
-  void InsertAt(Data dat, Natural nat);
+  void InsertAt(Natural nat, Data dat);
 
   default void InsertFirst(Data dat){
-    InsertAt(dat, new Natural(0));
+    InsertAt(new Natural(0), dat);
   }
 
   default void InsertLast(Data dat){
-    InsertAt(dat, Size());
+    InsertAt(Size(), dat);
   }
 }

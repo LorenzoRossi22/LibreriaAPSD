@@ -10,13 +10,21 @@ import apsd.interfaces.traits.Predicate;
 /** Object: Wrapper set implementation via chain. */
 public class WSet<Data> extends WSetBase<Data, VList<Data>>{ // Must extend WSetBase
 
+  protected Chain<Data> chain;
+
   public WSet(){
     super();
   }
 
   public WSet(Chain<Data> chn){
     super();
-    if (chn != null) this.chn = (VList<Data>) chn;
+    this.chn = new VList<>();
+    if (chn != null) {
+      chn.TraverseForward(x -> {
+          this.chn.InsertAt(Natural.Of(this.chn.Size().ToLong()), x);
+          return true;
+      });
+    }
   }
 
   public WSet(TraversableContainer<Data> con){
@@ -31,13 +39,19 @@ public class WSet<Data> extends WSetBase<Data, VList<Data>>{ // Must extend WSet
 
   public WSet(Chain<Data> chn, TraversableContainer<Data> con){
     super();
-    if (chn != null) this.chn = (VList<Data>) chn;
+    this.chn = new VList<>();
+    if (chn != null) {
+      chn.TraverseForward(x -> {
+          this.chn.InsertAt(Natural.Of(this.chn.Size().ToLong()), x);
+          return true;
+      });
+    }
 
     if (con != null) {
-        con.TraverseForward(x -> {
-            this.Insert(x);
-            return true;
-        });
+      con.TraverseForward(x -> {
+          this.Insert(x);
+          return true;
+      });
     }
   }
 

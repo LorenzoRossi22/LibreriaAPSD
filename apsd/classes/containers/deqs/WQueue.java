@@ -17,20 +17,22 @@ public class WQueue<Data> implements Queue<Data>{ // Must implement Queue
   }
 
   public WQueue(List<Data> lst){
+    if (lst == null) throw new IllegalArgumentException("La lista non può essere nulla");
     this.lst = lst;
   }
 
   public WQueue(TraversableContainer<Data> con){
     this.lst = new VList<>();
     for(long i = 0; i < con.Size().ToLong(); i++){
-      lst.InsertAt(con.GetAt(Natural.Of(i)), Natural.Of(lst.Size().ToLong()));
+      lst.InsertAt(Natural.Of(lst.Size().ToLong()), con.GetAt(Natural.Of(i)));
     }
   }
 
   public WQueue(List<Data> lst, TraversableContainer<Data> con){
+    if (lst == null) throw new IllegalArgumentException("La lista non può essere nulla");
     this.lst = lst;
     for(long i = 0; i < con.Size().ToLong(); i++){
-      lst.InsertAt(con.GetAt(Natural.Of(i)), Natural.Of(lst.Size().ToLong()));
+      lst.InsertAt(Natural.Of(lst.Size().ToLong()), con.GetAt(Natural.Of(i)));
     }
   }
 
@@ -47,10 +49,8 @@ public class WQueue<Data> implements Queue<Data>{ // Must implement Queue
   }
 
   public boolean TraverseBackward(Predicate<Data> pred) {
-    long i = lst.Size().ToLong();
-    if (i == 0) return false;
-    i = i - 1;
-    while (i >= 0 && i!=0) {
+    long i = lst.Size().ToLong() - 1;
+    while (i >= 0) {
       Data elem = lst.GetAt(Natural.Of(i));
       if (pred.Apply(elem)) return true;
       i--;
@@ -113,12 +113,12 @@ public class WQueue<Data> implements Queue<Data>{ // Must implement Queue
   /* ************************************************************************ */
 
   public Data Head(){
-    if (lst.Size().ToLong() == 0) throw new IllegalStateException("Coda vuota");
+    if (lst.Size().ToLong() == 0) throw new IndexOutOfBoundsException("Coda vuota");
     return lst.GetAt(Natural.Of(0));
   }
 
   public void Dequeue(){
-    if (lst.Size().ToLong() == 0) throw new IllegalStateException("Coda vuota");
+    if (lst.Size().ToLong() == 0) throw new IndexOutOfBoundsException("Coda vuota");
     lst.RemoveAt(Natural.Of(0));
   }
 
@@ -130,6 +130,6 @@ public class WQueue<Data> implements Queue<Data>{ // Must implement Queue
 
   public void Enqueue(Data dat){
     long i = lst.Size().ToLong();
-    lst.InsertAt(dat, Natural.Of(i));
+    lst.InsertAt(Natural.Of(i), dat);
   }
 }

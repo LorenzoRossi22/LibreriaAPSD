@@ -39,8 +39,8 @@ abstract public class VectorBase<Data> implements Vector<Data>{ // Must implemen
 
   public void Clear(){
     for (int i = 0; i < arr.length; i++) {
-            arr[i] = null;
-        }
+      arr[i] = null;
+    }
   }
 
   /* ************************************************************************ */
@@ -89,30 +89,29 @@ abstract public class VectorBase<Data> implements Vector<Data>{ // Must implemen
 
   public MutableBackwardIterator<Data> BIterator(){
     return new MutableBackwardIterator<Data>() {
+      private int index = arr.length - 1;
 
-        private int index = arr.length - 1;
+      public boolean IsValid() {
+        return index >= 0 && index < arr.length;
+      }
 
-        public boolean IsValid() {
-          return index >= 0 && index < arr.length;
-        }
+      public void Reset() {
+        index = arr.length - 1;
+      }
 
-        public void Reset() {
-          index = arr.length - 1;
-        }
+      public Data GetCurrent() {
+        if (!IsValid()) return null;
+        return arr[index];
+      }
 
-        public Data GetCurrent() {
-          if (!IsValid()) return null;
-          return arr[index];
-        }
+      public Data DataNPrev() {
+        if (!IsValid()) return null;
+        return arr[index--];
+      }
 
-        public Data DataNPrev() {
-          if (!IsValid()) return null;
-          return arr[index--];
-        }
-
-        public void SetCurrent(Data dat) {
-          if (IsValid()) arr[index] = dat;
-        }
+      public void SetCurrent(Data dat) {
+        if (IsValid()) arr[index] = dat;
+      }
     };
   }
 

@@ -21,7 +21,7 @@ public class VList<Data> extends VChainBase<Data> implements List<Data>{ // Must
     if (con != null) {
         con.TraverseForward(elem -> {
             InsertAt(Natural.Of(vec.Size().ToLong()), elem);
-            return false;
+            return true;
         });
     }
   }
@@ -50,7 +50,7 @@ public class VList<Data> extends VChainBase<Data> implements List<Data>{ // Must
   }
 
   public void InsertAt(Natural nat, Data dat) {
-    vec.InsertAt(dat, nat);
+    vec.InsertAt(nat, dat);
   }
 
   public List<Data> New() {
@@ -146,6 +146,6 @@ public class VList<Data> extends VChainBase<Data> implements List<Data>{ // Must
   /* ************************************************************************ */
 
   public void InsertAt(Data dat, Natural nat){
-    vec.InsertAt(dat, nat);
+    vec.InsertAt(nat, dat);
   }
 }

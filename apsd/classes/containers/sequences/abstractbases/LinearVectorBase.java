@@ -41,7 +41,10 @@ abstract public class LinearVectorBase<Data> extends VectorBase<Data>{ // Must e
 
   public void SetAt(Data dat, Natural nat){
     int i = (int)nat.ToLong();
-    if (i < 0 || i >= size) throw new IndexOutOfBoundsException("Indice non valido : " + i);
+    if (i < 0) throw new IndexOutOfBoundsException("Indice non valido : " + i);
+
+    if (arr == null || i >= arr.length) throw new IndexOutOfBoundsException("Indice non valido : " + i);
+
     arr[i] = dat;
   }
 

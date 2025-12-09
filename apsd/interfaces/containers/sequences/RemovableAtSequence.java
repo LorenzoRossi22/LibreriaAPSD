@@ -12,11 +12,12 @@ public interface RemovableAtSequence<Data> extends Sequence<Data>{ // Must exten
   Data AtNRemove(Natural nat);
 
   default void RemoveFirst(){
-    Natural pos = Search(GetFirst());
-    if (pos != null)  AtNRemove(pos);
+    if(Size().ToLong() == 0) throw new IndexOutOfBoundsException("Sequence vuota");
+    AtNRemove(Natural.Of(0));
   }
 
   default Data FirstNRemove(){
+    if(Size().ToLong() == 0) throw new IndexOutOfBoundsException("Sequence vuota");
     Data first = GetFirst();
     RemoveFirst();
     return first;
@@ -24,14 +25,14 @@ public interface RemovableAtSequence<Data> extends Sequence<Data>{ // Must exten
 
   default void RemoveLast(){
     Natural size = Size();
-    if (size.ToLong() == 0) return;
+    if (size.ToLong() == 0) throw new IndexOutOfBoundsException("Sequence vuota");
     Natural pos = Natural.Of(size.ToLong() - 1);
     AtNRemove(pos);
   }
 
   default Data LastNRemove(){
     Natural size = Size();
-    if (size.ToLong() == 0) return null;
+    if (size.ToLong() == 0) throw new IndexOutOfBoundsException("Sequence vuota");
     Natural pos = Natural.Of(size.ToLong() - 1);
     return AtNRemove(pos);
   }

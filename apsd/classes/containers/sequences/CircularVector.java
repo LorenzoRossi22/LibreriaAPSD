@@ -80,9 +80,9 @@ public class CircularVector<Data> extends CircularVectorBase<Data>{ // Must exte
     return result;
   }
 
-  public void InsertAt(Data dat, Natural nat) {
+  public void InsertAt(Natural nat, Data dat) {
     long idx = nat.ToLong();
-    if (idx < 0 || idx > Size().ToLong()) throw new IndexOutOfBoundsException();
+    if (idx < 0 || idx > Size().ToLong()) throw new IndexOutOfBoundsException("Indice non valido");
     ShiftRight(Natural.Of(idx), Natural.Of(1));
     SetAt(dat, Natural.Of(idx));
   }

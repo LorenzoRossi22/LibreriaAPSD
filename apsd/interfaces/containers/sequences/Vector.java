@@ -12,8 +12,9 @@ public interface Vector<Data> extends ReallocableContainer,MutableSequence<Data>
   }
 
   default void ShiftLeft(Natural pos, Natural num) {
-    long idx = ExcIfOutOfBound(pos);
+    long idx = pos.ToLong();
     long size = Size().ToLong();
+    if (idx < 0 || idx > size)  throw new IndexOutOfBoundsException("Indice non valido");
     long len = num.ToLong();
     len = (len <= size - idx) ? len : size - idx;
     if (len > 0) {
@@ -46,8 +47,9 @@ public interface Vector<Data> extends ReallocableContainer,MutableSequence<Data>
   }
 
   default void ShiftRight(Natural pos, Natural num) {
-    long idx = ExcIfOutOfBound(pos);
+    long idx = pos.ToLong();
     long size = Size().ToLong();
+    if (idx < 0 || idx > size) throw new IndexOutOfBoundsException("Indice non valido");
     long len = num.ToLong();
     len = (len <= size - idx) ? len : size - idx;
     if (len > 0) {
@@ -55,14 +57,14 @@ public interface Vector<Data> extends ReallocableContainer,MutableSequence<Data>
       long wrt = iniwrt + len;
       while (wrt >= Capacity().ToLong()) Grow();
       for (long rdr = iniwrt; rdr >= idx; rdr--, wrt--) {
-          Natural natrdr = Natural.Of(rdr);
-          SetAt(GetAt(natrdr), Natural.Of(wrt));
-          SetAt(null, natrdr);
+        Natural natrdr = Natural.Of(rdr);
+        SetAt(GetAt(natrdr), Natural.Of(wrt));
+        SetAt(null, natrdr);
+        if (rdr == 0) break;
       }
     }
   }
   
-
   default void ShiftFirstRight(){
     if (Size().ToLong() == 0) return;
     ShiftRight(new Natural(0));
@@ -74,8 +76,11 @@ public interface Vector<Data> extends ReallocableContainer,MutableSequence<Data>
   }
 
   default Vector<Data> SubVector(Natural nat1, Natural nat2){
-    long start = ExcIfOutOfBound(nat1);
-    long end   = ExcIfOutOfBound(nat2);
+    long size = Size().ToLong();
+    long start = nat1.ToLong();
+    long end   = nat2.ToLong();
+
+    if (start < 0 || start > size || end < 0 || end > size) throw new IndexOutOfBoundsException("Indice non valido");
 
     if (start > end) {
         long t = start;
@@ -85,7 +90,7 @@ public interface Vector<Data> extends ReallocableContainer,MutableSequence<Data>
 
     Vector<Data> sub = New();
 
-    for (long i = start; i <= end; i++) {
+    for (long i = start; i < end; i++) {
         sub.InsertLast(GetAt(Natural.Of(i)));
     }
 

@@ -58,7 +58,16 @@ public interface Set<Data> extends Collection<Data>{ // Must extend Collection
   /* ************************************************************************ */
 
   default boolean IsEqual(IterableContainer<Data> IterableC){
-    return false;
+    if (IterableC == null) return false;
+    if (!Size().equals(IterableC.Size())) return false;
+    var it1 = FIterator();
+    var it2 = IterableC.FIterator();
+    while (it1.IsValid() && it2.IsValid()) {
+        Data a = it1.DataNNext();
+        Data b = it2.DataNNext();
+        if (a == null ? b != null : !a.equals(b)) return false;
+    }
+    return true;
   }
 
 }

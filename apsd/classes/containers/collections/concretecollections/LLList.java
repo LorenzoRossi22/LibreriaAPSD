@@ -179,7 +179,7 @@ public class LLList<Data> extends LLChainBase<Data> implements List<Data>{ // Mu
   /* ************************************************************************ */
 
   public void SetAt(Data dat, Natural nat){
-    if (nat == null || dat == null) return;
+    if (nat == null || dat == null) throw new NullPointerException();
     long index = nat.ToLong();
     LLNode<Data> cur = headref.Get();
     for (long i = 0; i < index && cur != null; i++) cur = cur.GetNext().Get();
@@ -207,10 +207,6 @@ public class LLList<Data> extends LLChainBase<Data> implements List<Data>{ // Mu
   /* ************************************************************************ */
   /* Override specific member functions from InsertableAtSequence             */
   /* ************************************************************************ */
-
-  public void InsertAt(Data dat, Natural nat){
-    InsertAt(nat, dat);
-  }
 
   public void InsertFirst(Data dat){
     if (dat == null) return;

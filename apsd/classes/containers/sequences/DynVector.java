@@ -1,12 +1,12 @@
 package apsd.classes.containers.sequences;
 
 import apsd.classes.containers.sequences.abstractbases.DynLinearVectorBase;
-import apsd.classes.containers.sequences.abstractbases.LinearVectorBase;
 import apsd.classes.utilities.Natural;
 import apsd.interfaces.containers.base.TraversableContainer;
 import apsd.interfaces.containers.sequences.MutableSequence;
 import apsd.interfaces.containers.sequences.Sequence;
 import apsd.interfaces.containers.sequences.Vector;
+import apsd.interfaces.traits.Predicate;
 
 /** Object: Concrete dynamic (linear) vector implementation. */
 public class DynVector<Data> extends DynLinearVectorBase<Data>{ // Must extend DynLinearVectorBase
@@ -22,11 +22,16 @@ public class DynVector<Data> extends DynLinearVectorBase<Data>{ // Must extend D
 
   public DynVector(TraversableContainer<Data> con){
     super();
-    Natural size = con.Size();
-    Expand(size);
-    for (long i = 0; i < size.ToLong(); i++) {
-        SetAt(((LinearVectorBase<Data>) con).GetAt(Natural.Of(i)), Natural.Of(i));
-    }
+    if (con == null) return;
+
+    long count = con.Size().ToLong();
+    Expand(Natural.Of(count));
+
+    final long[] idx = {0};
+    con.TraverseForward(elem -> {
+        InsertAt(Natural.Of(size), elem);
+        return true;
+    });
   }
 
   public DynVector(Data[] arr){
@@ -35,21 +40,25 @@ public class DynVector<Data> extends DynLinearVectorBase<Data>{ // Must extend D
   }
 
   public void NewVector(Data[] dat) {
-    Expand(Natural.Of(dat.length));
+    if (dat == null) return;
+    Realloc(Natural.Of(dat.length));
+    size = 0;
     for (int i = 0; i < dat.length; i++) {
-        SetAt(dat[i], Natural.Of(i));
+        InsertAt(Natural.Of(size), dat[i]);
     }
   }
 
   public Sequence SubSequence(Natural start, Natural end) {
-    int from = (int) start.ToLong();
-    int to = (int) end.ToLong();
-    int length = to - from;
-    Data[] subArr = (Data[]) new Object[length];
-    for (int i = 0; i < length; i++) {
-        subArr[i] = GetAt(Natural.Of(from + i));
+    DynVector<Data> sub = new DynVector<>();
+
+    long from = start.ToLong();
+    long to = end.ToLong();
+
+    for (long i = from; i < to; i++) {
+        sub.InsertAt(Natural.Of(sub.Size().ToLong()), GetAt(Natural.Of(i)));
     }
-    return new DynVector<>(subArr);
+
+    return sub;
   }
 
   public boolean Apply(Data dat) {
@@ -60,16 +69,10 @@ public class DynVector<Data> extends DynLinearVectorBase<Data>{ // Must extend D
   }
 
   public Object Apply(Object dat, Object acc) {
-    Object result = acc;
     for (long i = 0; i < Size().ToLong(); i++) {
-        Object elem = GetAt(Natural.Of(i));
-        if (result instanceof Number && elem instanceof Number) {
-            result = ((Number)result).doubleValue() + ((Number)elem).doubleValue();
-        } else {
-            result = String.valueOf(result) + String.valueOf(elem);
-        }
+        acc = ((Predicate<Object>) dat).Apply(GetAt(Natural.Of(i)));
     }
-    return result;
+    return acc;
   }
 
   public Vector<Data> New() {
@@ -77,15 +80,66 @@ public class DynVector<Data> extends DynLinearVectorBase<Data>{ // Must extend D
   }
 
   public MutableSequence<Data> Subsequence(Natural nat1, Natural nat2) {
-    int from = (int) nat1.ToLong();
-    int to = (int) nat2.ToLong();
-    int length = to - from;
-    Data[] subArr = (Data[]) new Object[length];
-    for (int i = 0; i < length; i++) {
-        subArr[i] = GetAt(Natural.Of(from + i));
+    DynVector<Data> sub = new DynVector<>();
+
+    long from = nat1.ToLong();
+    long to = nat2.ToLong();
+
+    for (long i = from; i < to; i++) {
+        sub.InsertAt(Natural.Of(sub.Size().ToLong()), GetAt(Natural.Of(i)));
     }
-    DynVector<Data> subVec = new DynVector<>(subArr);
-    return subVec;
+
+    return sub;
   }
 
+  public void InsertAt(Natural nat, Data dat) {
+    long idx = nat.ToLong();
+    if (idx < 0 || idx > size) throw new IndexOutOfBoundsException("Indice non valido");
+
+    if (arr == null || arr.length == 0) {
+      Realloc(Natural.Of(1));
+    } else if (size >= arr.length) {
+      long newCap = Math.max(1, arr.length * 2);
+      Realloc(Natural.Of(newCap));
+    }
+
+    for (long i = size - 1; i >= idx; i--) {
+      arr[(int)(i + 1)] = arr[(int)i];
+    }
+
+    arr[(int)idx] = dat;
+    size++;
+  }
+
+  @Override
+  public void Expand(Natural n) {
+    long k = n.ToLong();
+    if (k <= 0) return;
+
+    long newSize = size + k;
+
+    if (arr == null || newSize > arr.length) {
+      long newCap = Math.max(newSize, (arr == null ? 1 : arr.length) * 2);
+      Realloc(Natural.Of(newCap));
+    }
+
+    size = newSize;
+  }
+
+  @Override
+  public Data AtNRemove(Natural nat) {
+    long idx = nat.ToLong();
+    if (idx < 0 || idx >= size) throw new IndexOutOfBoundsException("Indice non valido");
+
+    Data removed = arr[(int)idx];
+
+    for (long i = idx; i < size - 1; i++) {
+        arr[(int)i] = arr[(int)(i + 1)];
+    }
+
+    arr[(int)(size - 1)] = null;
+    size--;
+
+    return removed;
+  }
 }

@@ -6,10 +6,8 @@ import apsd.classes.utilities.Natural;
 /** Object: Abstract dynamic linear vector base implementation. */
 abstract public class DynLinearVectorBase<Data> extends LinearVectorBase<Data> implements DynVector<Data>{ // Must extend LinearVectorBase and implement DynVector
 
-  protected long size;
-
   public DynLinearVectorBase(){
-    size = 0L;
+    if (arr == null) arr = (Data[]) new Object[0];
   }
 
   public void ArrayAlloc(Natural newsize){
@@ -43,13 +41,19 @@ abstract public class DynLinearVectorBase<Data> extends LinearVectorBase<Data> i
   /* ************************************************************************ */
 
   public void Realloc(Natural newCapacity){
-    int cap = (int)newCapacity.ToLong();
-    if (cap >= Integer.MAX_VALUE) throw new ArithmeticException("La dimensione dell'array supera il massimo consentito ("+Integer.MAX_VALUE+")");
+    long capLong = newCapacity.ToLong();
+    if (capLong >= Integer.MAX_VALUE) throw new ArithmeticException("La dimensione dell'array supera il massimo consentito ("+Integer.MAX_VALUE+")");
+
+    int cap = (int) capLong;
     Data[] newArr = (Data[]) new Object[cap];
-    int copyCount = (int) Math.min((int)size, cap);
-    System.arraycopy(arr, 0, newArr, 0, copyCount);
+    int copyCount = 0;
+    if (arr != null) {
+        copyCount = (int) Math.min(size, cap);
+        if (copyCount > 0)  System.arraycopy(arr, 0, newArr, 0, copyCount);
+    }
+
     arr = newArr;
-    size = copyCount;
+    if (size > cap) size = cap;
   }
 
   /* ************************************************************************ */
@@ -57,11 +61,20 @@ abstract public class DynLinearVectorBase<Data> extends LinearVectorBase<Data> i
   /* ************************************************************************ */
 
   public void Expand(Natural newCapacity){
-    if (arr.length < newCapacity.ToLong()) Realloc(newCapacity);
+    long cap = newCapacity.ToLong();
+    if (cap < 0) throw new IllegalArgumentException("Capacità negativa");
+
+    if (arr == null) {
+        ArrayAlloc(newCapacity);
+        return;
+    }
+
+    if (arr.length < cap) Realloc(newCapacity);
   }
 
   public void Reduce(Natural newCapacity){
-    if (arr.length > newCapacity.ToLong()) Realloc(newCapacity);
+    long cap = newCapacity.ToLong();
+    if (arr != null && arr.length > cap)  Realloc(newCapacity);
   }
 
 }
