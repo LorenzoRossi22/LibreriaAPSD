@@ -4,7 +4,7 @@ import apsd.interfaces.containers.sequences.DynVector;
 import apsd.classes.utilities.Natural;
 
 /** Object: Abstract dynamic linear vector base implementation. */
-abstract public class DynLinearVectorBase<Data> extends LinearVectorBase<Data> implements DynVector<Data>{ // Must extend LinearVectorBase and implement DynVector
+abstract public class DynLinearVectorBase<Data> extends LinearVectorBase<Data> implements DynVector<Data>{ 
 
   public DynLinearVectorBase(){
     if (arr == null) arr = (Data[]) new Object[0];
@@ -17,17 +17,9 @@ abstract public class DynLinearVectorBase<Data> extends LinearVectorBase<Data> i
     size = 0;
   }
 
-  /* ************************************************************************ */
-  /* Override specific member functions from Container                        */
-  /* ************************************************************************ */
-
   public Natural Size(){
     return Natural.Of(size);
   }
-
-  /* ************************************************************************ */
-  /* Override specific member functions from ClearableContainer               */
-  /* ************************************************************************ */
 
   public void Clear(){
     for (int i = 0; i < size; i++) {
@@ -35,10 +27,6 @@ abstract public class DynLinearVectorBase<Data> extends LinearVectorBase<Data> i
     }
     size = 0;
   }
-
-  /* ************************************************************************ */
-  /* Override specific member functions from ReallocableContainer             */
-  /* ************************************************************************ */
 
   public void Realloc(Natural newCapacity){
     long capLong = newCapacity.ToLong();
@@ -55,10 +43,6 @@ abstract public class DynLinearVectorBase<Data> extends LinearVectorBase<Data> i
     arr = newArr;
     if (size > cap) size = cap;
   }
-
-  /* ************************************************************************ */
-  /* Override specific member functions from ResizableContainer               */
-  /* ************************************************************************ */
 
   public void Expand(Natural newCapacity){
     long cap = newCapacity.ToLong();
@@ -77,4 +61,45 @@ abstract public class DynLinearVectorBase<Data> extends LinearVectorBase<Data> i
     if (arr != null && arr.length > cap)  Realloc(newCapacity);
   }
 
+  // --- FIX IMPORTANTI ---
+
+  @Override
+  public void InsertAt(Data dat, Natural nat){
+    if (nat == null) throw new NullPointerException("Indice nullo");
+    long idx = nat.ToLong();
+    
+    // Controllo corretto: si può inserire da 0 fino a size (incluso, per append)
+    if (idx < 0 || idx > size) throw new IndexOutOfBoundsException("Indice non valido: " + idx);
+
+    // Gestione Resize
+    if (size >= arr.length) {
+        long newCap = (arr.length == 0) ? 1 : arr.length * 2;
+        Realloc(Natural.Of(newCap));
+    }
+
+    // Shift solo se non stiamo inserendo in coda
+    if (idx < size) {
+        ShiftRight(nat);
+    }
+
+    // Inserimento e incremento size
+    arr[(int)idx] = dat;
+    size++;
+  }
+
+  @Override
+  public Data AtNRemove(Natural nat){
+    long idx = ExcIfOutOfBound(nat); // Questo controlla idx < size
+    Data val = GetAt(nat);
+
+    // Shift solo se non stiamo rimuovendo l'ultimo
+    if (idx < size - 1) {
+        ShiftLeft(nat);
+    } else {
+        arr[(int)idx] = null; // Pulizia riferimento
+    }
+
+    size--;
+    return val;
+  }
 }

@@ -5,7 +5,7 @@ import apsd.classes.utilities.Natural;
 import apsd.interfaces.containers.iterators.ForwardIterator;
 
 /** Interface: IterableContainer con supporto alla lettura e ricerca tramite posizione. */
-public interface Sequence<Data> extends IterableContainer<Data>{ // Must extend IterableContainer
+public interface Sequence<Data> extends IterableContainer<Data>{ 
 
   default Data GetAt(Natural nat){
     long index = ExcIfOutOfBound(nat);
@@ -19,7 +19,8 @@ public interface Sequence<Data> extends IterableContainer<Data>{ // Must extend 
   }
 
   default Data GetFirst(){
-    if (Size().ToLong() == 0) throw new IndexOutOfBoundsException("Sequence vuota");
+    // JUnit si aspetta IndexOutOfBoundsException, non IllegalStateException
+    if (Size().ToLong() == 0) throw new IndexOutOfBoundsException("Sequence vuota"); 
     return GetAt(Natural.Of(0));
   }
 
