@@ -21,6 +21,10 @@ public interface BackwardIterator<Data> extends Iterator<Data>{ // Must extend I
     }
   }
 
+  default void Prev(long steps) {
+    Prev(Natural.Of(steps));
+  }
+
   Data DataNPrev();
 
   default boolean ForEachBackward(Predicate<Data> fun) {
