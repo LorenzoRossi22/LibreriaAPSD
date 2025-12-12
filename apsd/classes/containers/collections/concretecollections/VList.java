@@ -10,7 +10,7 @@ import apsd.classes.containers.sequences.DynVector;
 import apsd.interfaces.containers.sequences.MutableSequence;
 
 /** Object: Concrete list implementation on (dynamic circular) vector. */
-public class VList<Data> extends VChainBase<Data> implements List<Data>{ // Must extend VChainBase and implement List
+public class VList<Data> extends VChainBase<Data> implements List<Data>{
 
   public VList(){
     super(new DynVector<Data>());
@@ -28,6 +28,13 @@ public class VList<Data> extends VChainBase<Data> implements List<Data>{ // Must
 
   protected VList(DynVector<Data> vec){
      super(vec);
+  }
+
+  // FIX: Deve ritornare boolean
+  @Override
+  public boolean Insert(Data x) {
+      InsertLast(x);
+      return true;
   }
 
   public boolean Apply(Data dat) {
@@ -61,13 +68,8 @@ public class VList<Data> extends VChainBase<Data> implements List<Data>{ // Must
     return new VList<Data>(arr);
   }
 
-  /* ************************************************************************ */
-  /* Override specific member functions from MutableIterableContainer         */
-  /* ************************************************************************ */
-
   public MutableForwardIterator FIterator(){
     return new MutableForwardIterator() {
-
         long index = 0;
         long lastIndex = -1;
 
@@ -125,13 +127,8 @@ public class VList<Data> extends VChainBase<Data> implements List<Data>{ // Must
       public void SetCurrent(Object dat) {
           if (lastIndex != -1) vec.SetAt((Data) dat, Natural.Of(lastIndex));
       }
-
     };
   }
-
-  /* ************************************************************************ */
-  /* Override specific member functions from MutableSequence                  */
-  /* ************************************************************************ */
 
   public void SetAt(Data dat, Natural nat){
     vec.SetAt(dat, nat);
@@ -140,10 +137,6 @@ public class VList<Data> extends VChainBase<Data> implements List<Data>{ // Must
   public MutableSequence SubSequence(Natural start, Natural end){
     return Subsequence(start, end);
   }
-
-  /* ************************************************************************ */
-  /* Override specific member functions from InsertableAtSequence             */
-  /* ************************************************************************ */
 
   public void InsertAt(Data dat, Natural nat){
     vec.InsertAt(dat, nat);

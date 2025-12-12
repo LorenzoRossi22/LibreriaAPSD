@@ -1,17 +1,17 @@
 package apsd.classes.containers.collections.concretecollections;
 
-import apsd.interfaces.containers.iterators.MutableBackwardIterator;
 import apsd.classes.containers.collections.concretecollections.bases.LLChainBase;
 import apsd.classes.containers.collections.concretecollections.bases.LLNode;
 import apsd.classes.utilities.Box;
 import apsd.classes.utilities.Natural;
 import apsd.interfaces.containers.base.TraversableContainer;
 import apsd.interfaces.containers.collections.List;
+import apsd.interfaces.containers.iterators.MutableBackwardIterator;
 import apsd.interfaces.containers.iterators.MutableForwardIterator;
 import apsd.interfaces.containers.sequences.MutableSequence;
 
 /** Object: Concrete list implementation on linked-list. */
-public class LLList<Data> extends LLChainBase<Data> implements List<Data>{ // Must extend LLChainBase and implement List
+public class LLList<Data> extends LLChainBase<Data> implements List<Data> {
 
   public LLList(){
     super();
@@ -32,6 +32,20 @@ public class LLList<Data> extends LLChainBase<Data> implements List<Data>{ // Mu
     headref.Set(head);
     tailref.Set(tail);
     this.size.Assign(Natural.Of(size));
+  }
+
+  // FIX CRITICO: Deve ritornare boolean per rispettare l'interfaccia InsertableContainer
+  @Override
+  public boolean Insert(Data x) {
+      InsertLast(x);
+      return true; // Ritorna sempre true dopo l'inserimento
+  }
+
+  // FIX: GetFirst deve lanciare eccezione se vuota
+  @Override
+  public Data GetFirst() {
+      if (IsEmpty()) throw new IndexOutOfBoundsException("Lista vuota");
+      return super.GetFirst();
   }
 
   public LLChainBase<Data> NewChain(long a, LLNode<Data> node1, LLNode<Data> node2){
@@ -91,10 +105,6 @@ public class LLList<Data> extends LLChainBase<Data> implements List<Data>{ // Mu
   public List<Data> New() {
     return new LLList<>();
   }
-
-  /* ************************************************************************ */
-  /* Override specific member functions from MutableIterableContainer         */
-  /* ************************************************************************ */
 
   public MutableBackwardIterator BIterator(){
     return new MutableBackwardIterator() {
@@ -174,10 +184,6 @@ public class LLList<Data> extends LLChainBase<Data> implements List<Data>{ // Mu
     };
   }
 
-  /* ************************************************************************ */
-  /* Override specific member functions from MutableSequence                  */
-  /* ************************************************************************ */
-
   public void SetAt(Data dat, Natural nat){
     if (nat == null || dat == null) throw new NullPointerException();
     long index = nat.ToLong();
@@ -203,10 +209,6 @@ public class LLList<Data> extends LLChainBase<Data> implements List<Data>{ // Mu
     }
     return sub;
   }
-
-  /* ************************************************************************ */
-  /* Override specific member functions from InsertableAtSequence             */
-  /* ************************************************************************ */
 
   public void InsertFirst(Data dat){
     if (dat == null) return;
